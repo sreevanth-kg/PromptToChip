@@ -3,3 +3,4 @@ __pycache__/
 *.py[cod]
 gemini_v/
 chat_memory.json
+project_metadata.json
