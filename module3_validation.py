@@ -68,8 +68,8 @@ def validate_generated_artifacts(artifacts, board_package):
     if "input wire clk" not in hdl_text:
         failures.append("HDL does not expose verified board clock port clk")
 
-    if "output reg [0:0] led" not in hdl_text:
-        failures.append("HDL does not expose verified LED vector port led[0:0]")
+    if "output reg [5:0] led" not in hdl_text:
+        failures.append("HDL does not expose verified LED vector port led[5:0]")
 
     if "led[0] <= ~blink_state" not in hdl_text:
         failures.append("HDL does not account for active-low LED behavior")

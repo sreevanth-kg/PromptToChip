@@ -155,7 +155,12 @@ def load_board_context(board_id: str = DEFAULT_BOARD_ID) -> Dict:
     }
 
 
-def build_coder_prompt(user_request: str, project_metadata: Dict, recent_messages: Iterable[Dict]) -> str:
+def build_coder_prompt(
+    user_request: str,
+    project_metadata: Dict,
+    recent_messages: Iterable[Dict],
+    planner_spec: Optional[Dict] = None,
+) -> str:
     board_context = load_board_context()
     recent_turns = []
 
@@ -184,6 +189,9 @@ Mission:
 Current project metadata:
 {json.dumps(project_metadata, indent=2)}
 
+Approved planner specification:
+{json.dumps(planner_spec or {}, indent=2)}
+
 Recent conversation:
 {json.dumps(recent_turns, indent=2)}
 
@@ -205,11 +213,12 @@ def ask_coder(
     user_request: str,
     project_metadata: Dict,
     recent_messages: Iterable[Dict],
+    planner_spec: Optional[Dict] = None,
     model: str = DEFAULT_CODER_MODEL,
     timeout: int = 180,
 ) -> str:
     global LAST_CODER_PROMPT
-    prompt = build_coder_prompt(user_request, project_metadata, recent_messages)
+    prompt = build_coder_prompt(user_request, project_metadata, recent_messages, planner_spec)
     LAST_CODER_PROMPT = prompt
 
     payload = {
@@ -241,7 +250,7 @@ def ask_coder(
     if not text:
         raise RuntimeError("coder agent returned an empty response")
 
-    return validate_or_repair_coder_output(user_request, text)
+    return validate_or_repair_coder_output(user_request, text, planner_spec)
 
 
 def get_last_coder_prompt() -> str:
@@ -296,14 +305,43 @@ def is_led_blinker_request(user_request: str) -> bool:
     return "led" in normalized and ("blink" in normalized or "blinker" in normalized)
 
 
+def _planner_text(planner_spec: Optional[Dict]) -> str:
+    if not planner_spec:
+        return ""
+
+    return json.dumps(planner_spec, indent=2)
+
+
+def extract_required_led_indices(user_request: str, planner_spec: Optional[Dict] = None) -> List[int]:
+    combined = f"{user_request}\n{_planner_text(planner_spec)}"
+    indices = {int(match) for match in re.findall(r"led\[(\d+)\]", combined, re.IGNORECASE)}
+
+    if re.search(r"\blast\s+3\s+led", combined, re.IGNORECASE):
+        indices.update({3, 4, 5})
+
+    if not indices and is_led_blinker_request(combined):
+        indices.add(0)
+
+    return sorted(index for index in indices if 0 <= index <= 5)
+
+
+def request_has_sequential_pattern(user_request: str, planner_spec: Optional[Dict] = None) -> bool:
+    combined = f"{user_request}\n{_planner_text(planner_spec)}".lower()
+    return "1-2-3" in combined or "sequential" in combined or "sequence" in combined or "pattern" in combined
+
+
 def has_forbidden_gowin_constraint_syntax(text: str) -> bool:
     return any(token.lower() in text.lower() for token in FORBIDDEN_GOWIN_CONSTRAINT_TOKENS)
 
 
-def build_led_blinker_verilog(clock_frequency_hz: int) -> str:
-    return f"""module led_blinker (
+def build_led_blinker_verilog(clock_frequency_hz: int, led_indices: Optional[List[int]] = None) -> str:
+    led_indices = led_indices or [0]
+
+    if len(led_indices) == 1:
+        led_index = led_indices[0]
+        return f"""module led_blinker (
     input wire clk,
-    output reg [0:0] led
+    output reg [5:0] led
 );
 
     localparam integer CLOCK_HZ = {clock_frequency_hz};
@@ -320,7 +358,51 @@ def build_led_blinker_verilog(clock_frequency_hz: int) -> str:
             counter <= counter + 1'b1;
         end
 
-        led[0] <= ~blink_state;
+        led <= 6'b111111;
+        led[{led_index}] <= ~blink_state;
+    end
+endmodule
+"""
+
+    case_lines = []
+    for step, led_index in enumerate(led_indices):
+        case_lines.append(
+            f"""            {len(led_indices)}'d{step}: begin
+                led <= 6'b111111;
+                led[{led_index}] <= 1'b0;
+            end"""
+        )
+
+    cases = "\n".join(case_lines)
+    step_bits = max(2, (len(led_indices) - 1).bit_length())
+
+    return f"""module led_pattern (
+    input wire clk,
+    output reg [5:0] led
+);
+
+    localparam integer CLOCK_HZ = {clock_frequency_hz};
+    localparam integer STEP_CYCLES = CLOCK_HZ;
+
+    reg [24:0] counter = 0;
+    reg [{step_bits - 1}:0] step = 0;
+
+    always @(posedge clk) begin
+        if (counter == STEP_CYCLES - 1) begin
+            counter <= 0;
+            if (step == {step_bits}'d{len(led_indices) - 1}) begin
+                step <= 0;
+            end else begin
+                step <= step + 1'b1;
+            end
+        end else begin
+            counter <= counter + 1'b1;
+        end
+
+        case (step)
+{cases}
+            default: led <= 6'b111111;
+        endcase
     end
 endmodule
 """
@@ -338,25 +420,42 @@ def build_gowin_cst_for_signals(constraints: Dict, signal_names: Iterable[str]) 
     return "\n".join(lines) + "\n"
 
 
-def build_led_blinker_response(user_request: str, raw_coder_response: str, repair_reason: str) -> str:
+def build_led_blinker_response(
+    user_request: str,
+    raw_coder_response: str,
+    repair_reason: str,
+    planner_spec: Optional[Dict] = None,
+) -> str:
     package = load_board_package_files()
     board_profile = package["board_profile"]["data"]
     constraints = package["constraints"]["data"]
     clock_frequency_hz = board_profile["clock"]["default_frequency_hz"]
 
-    verilog = build_led_blinker_verilog(clock_frequency_hz)
-    cst = build_gowin_cst_for_signals(constraints, ["clk", "led[0]"])
+    led_indices = extract_required_led_indices(user_request, planner_spec)
+    if not led_indices:
+        led_indices = [0]
+
+    sequential = request_has_sequential_pattern(user_request, planner_spec) and len(led_indices) > 1
+    hdl_filename = "led_pattern.v" if sequential else "led_blinker.v"
+    cst_filename = "led_pattern.cst" if sequential else "led_blinker.cst"
+    verilog = build_led_blinker_verilog(clock_frequency_hz, led_indices)
+    cst_signals = ["clk"] + [f"led[{index}]" for index in led_indices]
+    cst = build_gowin_cst_for_signals(constraints, cst_signals)
+    mapping_text = ", ".join(
+        f"led[{index}] -> pin {_find_constraint(constraints, f'led[{index}]')['package_pin']}"
+        for index in led_indices
+    )
 
     return f"""1. Short implementation note
 The coder draft was validated before artifact export because {repair_reason}. The returned artifacts below are generated from the verified Tang Nano 9K board package for the Gowin toolchain.
 
 2. HDL code
-File: led_blinker.v
+File: {hdl_filename}
 ```verilog
 {verilog}```
 
 3. Constraint snippets
-File: led_blinker.cst
+File: {cst_filename}
 ```cst
 {cst}```
 
@@ -364,12 +463,16 @@ File: led_blinker.cst
 - Board: Tang Nano 9K
 - Toolchain: Gowin
 - Clock source: board_profile.json default clock, {clock_frequency_hz} Hz
-- Verified mappings used: clk -> pin 52, led[0] -> pin 10
+- Verified mappings used: clk -> pin 52, {mapping_text}
 - Rejected raw coder output reason: {repair_reason}
 """
 
 
-def validate_or_repair_coder_output(user_request: str, coder_response: str) -> str:
+def validate_or_repair_coder_output(
+    user_request: str,
+    coder_response: str,
+    planner_spec: Optional[Dict] = None,
+) -> str:
     package = load_board_package_files()
     board_profile = package["board_profile"]["data"]
     board_id = board_profile.get("board_id")
@@ -382,8 +485,8 @@ def validate_or_repair_coder_output(user_request: str, coder_response: str) -> s
         if has_forbidden_gowin_constraint_syntax(coder_response):
             reason = "the raw output contained Xilinx/XDC constraint syntax for a Gowin board"
         else:
-            reason = "the Tang Nano 9K LED blinker flow requires deterministic Gowin CST generated from constraints.json"
-        return build_led_blinker_response(user_request, coder_response, reason)
+            reason = "the Tang Nano 9K LED flow requires deterministic Gowin CST generated from constraints.json and must match the approved plan"
+        return build_led_blinker_response(user_request, coder_response, reason, planner_spec)
 
     if has_forbidden_gowin_constraint_syntax(coder_response):
         reason = "it contained Xilinx/XDC constraint syntax for a Gowin board"

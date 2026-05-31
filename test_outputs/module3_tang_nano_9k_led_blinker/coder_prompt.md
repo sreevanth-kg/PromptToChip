@@ -23,6 +23,9 @@ Current project metadata:
   "status": "coding"
 }
 
+Approved planner specification:
+{}
+
 Recent conversation:
 []
 

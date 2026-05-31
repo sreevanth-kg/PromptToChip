@@ -265,6 +265,8 @@ Hard rules:
 - For Tang Nano 9K work, use only verified board resources from the board context.
 - Mention unresolved board resources only as unavailable/gated, never as usable pins.
 - If the user wrote /code, still create a plan and wait for approval.
+- Put exact required top-level signals and pins in coder_request. Example: use led[3], led[4], led[5] on pins 14, 15, 16 for a last-three-LED pattern.
+- Preserve requested LED count, LED indices, order, and pattern in implementation_plan and coder_request.
 
 Current project metadata:
 {json.dumps(compact_metadata(project), indent=2)}
@@ -395,7 +397,7 @@ def extract_named_code_blocks(coder_response):
     return blocks
 
 
-def save_coder_artifacts(chat_name, coder_response):
+def save_coder_artifacts(chat_name, coder_response, planner_spec=None):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = GENERATED_ROOT / safe_name(chat_name) / timestamp
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -404,8 +406,10 @@ def save_coder_artifacts(chat_name, coder_response):
     response_path.write_text(coder_response + "\n", encoding="utf-8")
     prompt_path = output_dir / "coder_prompt.md"
     prompt_path.write_text(get_last_coder_prompt() + "\n", encoding="utf-8")
+    planner_spec_path = output_dir / "planner_spec.json"
+    planner_spec_path.write_text(json.dumps(planner_spec or {}, indent=2) + "\n", encoding="utf-8")
 
-    generated_files = [str(response_path), str(prompt_path)]
+    generated_files = [str(response_path), str(prompt_path), str(planner_spec_path)]
     for block in extract_named_code_blocks(coder_response):
         path = output_dir / block["filename"]
         path.write_text(block["code"], encoding="utf-8")
@@ -739,8 +743,9 @@ def start_chat():
                             coder_request,
                             compact_metadata(project),
                             memory.get(chat_name, []),
+                            planner_spec=plan,
                         )
-                        artifacts = save_coder_artifacts(chat_name, coder_response)
+                        artifacts = save_coder_artifacts(chat_name, coder_response, planner_spec=plan)
                         review = review_coder_completion(client, model_name, plan, coder_response, artifacts)
                         ai_response = (
                             plan_memory

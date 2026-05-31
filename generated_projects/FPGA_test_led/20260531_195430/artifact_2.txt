@@ -1,5 +1,0 @@
-// Clock constraint
-set_property -dict {PACKAGE_PIN K4 IOSTANDARD LVCMOS33} [get_ports clk]
-
-// LED[0] constraint
-set_property -dict {PACKAGE_PIN J10 IOSTANDARD LVCMOS33 PULLUP 0} [get_ports led]

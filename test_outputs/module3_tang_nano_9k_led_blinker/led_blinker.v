@@ -1,6 +1,6 @@
 module led_blinker (
     input wire clk,
-    output reg [0:0] led
+    output reg [5:0] led
 );
 
     localparam integer CLOCK_HZ = 27000000;
@@ -17,6 +17,7 @@ module led_blinker (
             counter <= counter + 1'b1;
         end
 
+        led <= 6'b111111;
         led[0] <= ~blink_state;
     end
 endmodule

@@ -1,12 +1,12 @@
 1. Short implementation note
-The coder draft was validated before artifact export because the Tang Nano 9K LED blinker flow requires deterministic Gowin CST generated from constraints.json. The returned artifacts below are generated from the verified Tang Nano 9K board package for the Gowin toolchain.
+The coder draft was validated before artifact export because the Tang Nano 9K LED flow requires deterministic Gowin CST generated from constraints.json and must match the approved plan. The returned artifacts below are generated from the verified Tang Nano 9K board package for the Gowin toolchain.
 
 2. HDL code
 File: led_blinker.v
 ```verilog
 module led_blinker (
     input wire clk,
-    output reg [0:0] led
+    output reg [5:0] led
 );
 
     localparam integer CLOCK_HZ = 27000000;
@@ -23,6 +23,7 @@ module led_blinker (
             counter <= counter + 1'b1;
         end
 
+        led <= 6'b111111;
         led[0] <= ~blink_state;
     end
 endmodule
@@ -42,5 +43,5 @@ IO_PORT "led[0]" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;
 - Toolchain: Gowin
 - Clock source: board_profile.json default clock, 27000000 Hz
 - Verified mappings used: clk -> pin 52, led[0] -> pin 10
-- Rejected raw coder output reason: the Tang Nano 9K LED blinker flow requires deterministic Gowin CST generated from constraints.json
+- Rejected raw coder output reason: the Tang Nano 9K LED flow requires deterministic Gowin CST generated from constraints.json and must match the approved plan
 

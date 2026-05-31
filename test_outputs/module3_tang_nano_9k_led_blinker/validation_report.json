@@ -43,7 +43,7 @@
   ],
   "success": true,
   "failures": [],
-  "coder_response_chars": 1382,
+  "coder_response_chars": 1458,
   "artifact_evidence": {
     "clock_frequency_from_board_profile_hz": 27000000,
     "clock_frequency_found_in_hdl": true,
