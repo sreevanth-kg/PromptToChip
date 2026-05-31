@@ -8,7 +8,7 @@
     "vendor": "Gowin",
     "family": "GW1NR",
     "part": "GW1NR-9C",
-    "package": "QN88",
+    "package": "QN88P",
     "logic_cells": 8640
   },
   "clock": {
@@ -52,9 +52,9 @@
   },
   "status": {
     "profile": "created",
-    "pins": "pending",
-    "interfaces": "pending",
-    "constraints": "pending",
+    "pins": "created",
+    "interfaces": "created",
+    "constraints": "created",
     "examples": "pending"
   }
 }

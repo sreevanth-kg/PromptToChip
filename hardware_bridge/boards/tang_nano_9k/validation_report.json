@@ -1,0 +1,335 @@
+{
+  "schema_version": 1,
+  "board_id": "tang_nano_9k",
+  "generated_at": "2026-05-31",
+  "validation_status": "pass_v1.0_complete",
+  "validated_files": [
+    "board_profile.json",
+    "pins.json",
+    "interfaces.json",
+    "constraints.json"
+  ],
+  "package_context": {
+    "profile_package": "QN88P",
+    "pins_active_package": "QN88P",
+    "constraints_package": "QN88P",
+    "package_consistent": true
+  },
+  "summary": {
+    "total_signals": 39,
+    "verified_signals": 32,
+    "unverified_signals": 7,
+    "constraint_signals": 32,
+    "interfaces_declared": 8,
+    "interfaces_with_constraints": 8,
+    "missing_references_count": 0,
+    "duplicate_mappings_count": 0,
+    "schema_violations_count": 0
+  },
+  "cross_checks": {
+    "board_id_consistent": true,
+    "schema_version_supported": true,
+    "every_constraint_references_declared_interface": true,
+    "every_declared_interface_has_constraints": true,
+    "every_declared_interface_signal_has_constraint": true,
+    "every_constraint_pin_exists_in_pins_json": true,
+    "every_constraint_fpga_pin_name_matches_pins_json": true,
+    "no_duplicate_logical_signal_assignments": true,
+    "no_duplicate_package_pin_assignments": true
+  },
+  "missing_references": [],
+  "duplicate_mappings": {
+    "logical_signals": [],
+    "package_pins": []
+  },
+  "schema_violations": [],
+  "non_blocking_warnings": [
+    {
+      "file": "constraints.json",
+      "severity": "info",
+      "issue": "HDMI SDA/SCL/HPD/CEC plus SD DAT1/DAT2/card-detect remain unverified by design; no FPGA/package-pin mappings were inferred."
+    }
+  ],
+  "unverified_signals": [
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_sda",
+      "reason": "HDMI SDA connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_scl",
+      "reason": "HDMI SCL connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_hpd",
+      "reason": "HDMI HPD connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_cec",
+      "reason": "HDMI CEC/HCEC connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat1",
+      "reason": "TF card DAT1 connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat2",
+      "reason": "TF card DAT2 connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_card_detect",
+      "reason": "No verified FPGA/package-pin mapping for SD card detect is available in the local sources checked.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    }
+  ],
+  "coverage_by_interface": {
+    "clock": {
+      "verified": 1,
+      "unverified": 0,
+      "coverage": "complete_example_verified"
+    },
+    "leds": {
+      "verified": 6,
+      "unverified": 0,
+      "coverage": "complete_pin_and_polarity_verified"
+    },
+    "buttons": {
+      "verified": 2,
+      "unverified": 0,
+      "coverage": "complete_pin_and_polarity_verified_with_s2_caution"
+    },
+    "uart": {
+      "verified": 2,
+      "unverified": 0,
+      "coverage": "complete_example_verified"
+    },
+    "hdmi": {
+      "verified": 8,
+      "unverified": 4,
+      "coverage": "tmds_complete_auxiliary_unverified"
+    },
+    "spi_flash": {
+      "verified": 4,
+      "unverified": 0,
+      "coverage": "signal_pins_and_flash_metadata_verified"
+    },
+    "sd_card": {
+      "verified": 4,
+      "unverified": 3,
+      "coverage": "spi_mode_complete_4bit_and_card_detect_unverified_not_in_examples"
+    },
+    "spi_lcd": {
+      "verified": 5,
+      "unverified": 0,
+      "coverage": "complete_example_verified"
+    }
+  },
+  "readiness_score": {
+    "hdl_generation": {
+      "score": 96,
+      "status": "ready",
+      "basis": "All core HDL-facing signals are verified; unresolved items are optional HDMI auxiliary and non-SPI SD signals that should not be generated by default."
+    },
+    "constraint_generation": {
+      "score": 99,
+      "status": "ready",
+      "basis": "All 32 emitted physical constraints resolve against pins.json with no duplicate logical or package-pin mappings."
+    },
+    "board_programming": {
+      "score": 98,
+      "status": "ready",
+      "basis": "Clock, reset/button, UART, flash pins, and verified flash part metadata are available for programming workflows."
+    },
+    "interface_utilization": {
+      "score": 91,
+      "status": "ready_for_verified_interfaces",
+      "basis": "Clock, LEDs, buttons, UART, HDMI TMDS, SPI flash, SD SPI mode, and SPI LCD are usable; auxiliary HDMI and full SD/card-detect remain gated."
+    }
+  },
+  "reference_board_gate": {
+    "passes_validation": true,
+    "ready_as_reference_package": true,
+    "board_package_status": "v1.0_complete",
+    "blocking_issues": [],
+    "remaining_gaps": [
+      "HDMI SDA",
+      "HDMI SCL",
+      "HDMI HPD",
+      "HDMI CEC",
+      "SD DAT1",
+      "SD DAT2",
+      "SD card detect"
+    ],
+    "next_recommended_actions": [
+      "Do not generate HDL or constraints for unresolved auxiliary signals until verified FPGA/package-pin mappings are available.",
+      "Use the Tang Nano 9K package as the reference board package for onboarding the next supported board."
+    ]
+  },
+  "example_repository_validation": {
+    "id": "tangnano_9k_example_repo",
+    "title": "Sipeed TangNano-9K-example repository",
+    "url": "https://github.com/sipeed/TangNano-9K-example",
+    "local_path": ".tmp/TangNano-9K-example",
+    "inspected_paths": [
+      "hdmi/",
+      "picotiny/",
+      "uart/",
+      "led/",
+      "spi_lcd/"
+    ],
+    "usage_policy": "verification_and_gap_resolution_only",
+    "verified_usage": [
+      {
+        "path": "hdmi/src/hdmi.cst",
+        "signals": [
+          "tmds_d_p[0]",
+          "tmds_d_p[1]",
+          "tmds_d_p[2]",
+          "tmds_clk_p",
+          "resetn",
+          "clk"
+        ]
+      },
+      {
+        "path": "picotiny/project/picotiny.cst",
+        "signals": [
+          "tmds_d_p[0]",
+          "tmds_d_p[1]",
+          "tmds_d_p[2]",
+          "tmds_clk_p",
+          "ser_tx",
+          "ser_rx",
+          "flash_csb",
+          "flash_clk",
+          "flash_miso",
+          "flash_mosi",
+          "gpio[0..6]",
+          "resetn",
+          "clk"
+        ]
+      },
+      {
+        "path": "uart/src/top.cst",
+        "signals": [
+          "uart_tx",
+          "uart_rx",
+          "rst_n",
+          "clk"
+        ]
+      },
+      {
+        "path": "led/src/9K_LED_project.cst",
+        "signals": [
+          "led[0..5]",
+          "sys_rst_n",
+          "sys_clk"
+        ]
+      },
+      {
+        "path": "spi_lcd/src/lcd114_test.cst",
+        "signals": [
+          "lcd_data",
+          "lcd_rs",
+          "lcd_cs",
+          "lcd_clk",
+          "lcd_resetn",
+          "ser_tx",
+          "ser_rx",
+          "resetn",
+          "clk"
+        ]
+      }
+    ],
+    "gap_resolution_result": {
+      "hdmi_ddc": "not_present_in_inspected_examples",
+      "hdmi_hpd": "not_present_in_inspected_examples",
+      "sd_card_detect": "not_present_in_inspected_examples",
+      "sd_4bit_mappings": "not_present_in_inspected_examples",
+      "flash_metadata": "superseded_by_project_docs_flash_part_metadata"
+    }
+  },
+  "newly_verified_signals": [
+    "spi_flash.flash_part",
+    "spi_flash.flash_capacity"
+  ],
+  "remaining_unresolved_signals": [
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_sda",
+      "reason": "HDMI SDA connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_scl",
+      "reason": "HDMI SCL connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_hpd",
+      "reason": "HDMI HPD connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_cec",
+      "reason": "HDMI CEC/HCEC connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat1",
+      "reason": "TF card DAT1 connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat2",
+      "reason": "TF card DAT2 connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_card_detect",
+      "reason": "No verified FPGA/package-pin mapping for SD card detect is available in the local sources checked.",
+      "mapping_status": "unverified",
+      "status": "unverified"
+    }
+  ],
+  "board_package_version": "1.0",
+  "flash_metadata": {
+    "mapping_status": "verified_by_project_docs",
+    "flash_part": "PUYA P25Q32U",
+    "flash_capacity": "32 Mbit",
+    "sources": [
+      "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+      "accepted flash metadata update"
+    ]
+  }
+}

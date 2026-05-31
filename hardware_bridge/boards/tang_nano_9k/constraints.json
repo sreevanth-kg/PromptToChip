@@ -1,0 +1,995 @@
+{
+  "schema_version": 1,
+  "board_id": "tang_nano_9k",
+  "status": "v1.0_complete",
+  "source_policy": {
+    "web_research": "not_used",
+    "local_sources_only": true,
+    "primary_sources": [
+      "docs_manifest.json:board_schematic",
+      "pins.json",
+      "docs_manifest.json:chip_pinout_xlsx",
+      "local schematic text extraction",
+      "TangNano-9K-example repository"
+    ],
+    "notes": [
+      "Board-level net names were extracted from the local Tang_Nano_9k_3672 schematic PDF.",
+      "FPGA package metadata was cross-checked against pins.json generated from UG803-1.6E_GW1NR-9 Pinout.xlsx.",
+      "The schematic and accepted master CST identify the FPGA package as GW1NR-9 QN88P.",
+      "Flash part metadata accepted from local Project_docs schematic evidence: PUYA P25Q32U, 32 Mbit."
+    ]
+  },
+  "fpga_package": {
+    "board_profile_package": "QN88P",
+    "constraint_package_column": "QN88P",
+    "schematic_package_label": "GW1NR-9 QN88P",
+    "profile_package_mismatch": false
+  },
+  "defaults": {
+    "io_standard": "LVCMOS33",
+    "bank_voltage_assumption": "board-schematic-derived; verify before changing IO standards",
+    "gowin_constraint_syntax": "IO_LOC \"<port>\" <pin>;"
+  },
+  "constraints": [
+    {
+      "interface_id": "clock",
+      "signal_name": "clk",
+      "direction": "input",
+      "board_net": "PIN52_XTAL_IN",
+      "package_pin": "52",
+      "fpga_pin_name": "IOR17A/GCLKT_3",
+      "bank": "1",
+      "frequency_hz": 27000000,
+      "frequency_label": "27 MHz",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"clk\" 52;",
+      "sources": [
+        "board_profile.json:clock",
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 52",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:uart/src/top.cst",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "sys_clk"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "leds",
+      "signal_name": "led[0]",
+      "direction": "output",
+      "board_net": "PIN10_IOL15A_LED1",
+      "package_pin": "10",
+      "fpga_pin_name": "IOL15A/GCLKT_6",
+      "bank": "3",
+      "active_polarity": "active_low",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"led[0]\" 10;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 10",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+      ],
+      "example_aliases": [
+        "gpio[0]"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "leds",
+      "signal_name": "led[1]",
+      "direction": "output",
+      "board_net": "PIN11_IOL16B_LED2",
+      "package_pin": "11",
+      "fpga_pin_name": "IOL16B",
+      "bank": "3",
+      "active_polarity": "active_low",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"led[1]\" 11;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 11",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+      ],
+      "example_aliases": [
+        "gpio[1]"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "leds",
+      "signal_name": "led[2]",
+      "direction": "output",
+      "board_net": "PIN13_IOL21B_LED3",
+      "package_pin": "13",
+      "fpga_pin_name": "IOL21B",
+      "bank": "3",
+      "active_polarity": "active_low",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"led[2]\" 13;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 13",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+      ],
+      "example_aliases": [
+        "gpio[2]"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "leds",
+      "signal_name": "led[3]",
+      "direction": "output",
+      "board_net": "PIN14_IOL22B_LED4",
+      "package_pin": "14",
+      "fpga_pin_name": "IOL22B",
+      "bank": "3",
+      "active_polarity": "active_low",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"led[3]\" 14;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 14",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+      ],
+      "example_aliases": [
+        "gpio[3]"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "leds",
+      "signal_name": "led[4]",
+      "direction": "output",
+      "board_net": "PIN15_IOL25B_LED5",
+      "package_pin": "15",
+      "fpga_pin_name": "IOL25B",
+      "bank": "3",
+      "active_polarity": "active_low",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"led[4]\" 15;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 15",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+      ],
+      "example_aliases": [
+        "gpio[4]"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "leds",
+      "signal_name": "led[5]",
+      "direction": "output",
+      "board_net": "PIN16_IOL26B_LED6",
+      "package_pin": "16",
+      "fpga_pin_name": "IOL26B",
+      "bank": "3",
+      "active_polarity": "active_low",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"led[5]\" 16;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 16",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+      ],
+      "example_aliases": [
+        "gpio[5]"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "buttons",
+      "signal_name": "button_s1",
+      "direction": "input",
+      "board_net": "PIN3_IOT2A_BUTTON_S1_1V8",
+      "package_pin": "3",
+      "fpga_pin_name": "IOT2A",
+      "bank": "3",
+      "io_standard": "LVCMOS18",
+      "active_polarity": "active_low",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"button_s1\" 3;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 3",
+        "TangNano-9K-example:uart/src/top.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "rst_n",
+        "gpio[6]"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "buttons",
+      "signal_name": "button_s2",
+      "direction": "input",
+      "board_net": "PIN4_IOL5A_JTAG_SEL_S2_1V8",
+      "package_pin": "4",
+      "fpga_pin_name": "IOL5A/JTAGSEL_N/LPLL_T_in",
+      "bank": "3",
+      "io_standard": "LVCMOS18",
+      "active_polarity": "active_low",
+      "mapping_status": "verified_with_caution",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"button_s2\" 4;",
+      "caution": "Schematic labels this as both JTAG_SEL and S2; using it as a user button may affect boot/JTAG behavior.",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 4",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:led/src/9K_LED_project.cst",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ],
+      "example_aliases": [
+        "resetn",
+        "sys_rst_n"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "uart",
+      "signal_name": "uart_tx",
+      "direction": "output",
+      "board_net": "PIN17_IOB2A_FPGA_TX",
+      "package_pin": "17",
+      "fpga_pin_name": "IOB2A",
+      "bank": "2",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"uart_tx\" 17;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 17",
+        "TangNano-9K-example:uart/src/top.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ],
+      "example_aliases": [
+        "ser_tx"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "uart",
+      "signal_name": "uart_rx",
+      "direction": "input",
+      "board_net": "PIN18_IOB2B_FPGA_RX",
+      "package_pin": "18",
+      "fpga_pin_name": "IOB2B",
+      "bank": "2",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"uart_rx\" 18;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 18",
+        "TangNano-9K-example:uart/src/top.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ],
+      "example_aliases": [
+        "ser_rx"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_clk_p",
+      "direction": "output",
+      "board_net": "PIN69_RGB_G3/HDMI_CK_P",
+      "package_pin": "69",
+      "fpga_pin_name": "IOT42A",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_clk_p\" 69;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 69",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_clk_p"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D",
+      "gowin_pair_cst": "IO_LOC \"tmds_clk_p\" 69,68;",
+      "example_pair_mapping": "positive_port_declares_positive_and_negative_package_pins"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_clk_n",
+      "direction": "output",
+      "board_net": "PIN68_RGB_G4/HDMI_CK_N",
+      "package_pin": "68",
+      "fpga_pin_name": "IOT42B",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_clk_n\" 68;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 68",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_clk_n"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_d0_p",
+      "direction": "output",
+      "board_net": "PIN71_RGB_R7/HDMI_D0_P",
+      "package_pin": "71",
+      "fpga_pin_name": "IOT41A",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_d0_p\" 71;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 71",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_d_p[0]"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D",
+      "gowin_pair_cst": "IO_LOC \"tmds_d_p[0]\" 71,70;",
+      "example_pair_mapping": "positive_port_declares_positive_and_negative_package_pins"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_d0_n",
+      "direction": "output",
+      "board_net": "PIN70_RGB_G2/HDMI_D0_N",
+      "package_pin": "70",
+      "fpga_pin_name": "IOT41B",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_d0_n\" 70;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 70",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_d_n[0]"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_d1_p",
+      "direction": "output",
+      "board_net": "PIN73_RGB_R5/HDMI_D1_P",
+      "package_pin": "73",
+      "fpga_pin_name": "IOT39A",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_d1_p\" 73;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 73",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_d_p[1]"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D",
+      "gowin_pair_cst": "IO_LOC \"tmds_d_p[1]\" 73,72;",
+      "example_pair_mapping": "positive_port_declares_positive_and_negative_package_pins"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_d1_n",
+      "direction": "output",
+      "board_net": "PIN72_RGB_R6/HDMI_D1_N",
+      "package_pin": "72",
+      "fpga_pin_name": "IOT39B",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_d1_n\" 72;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 72",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_d_n[1]"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_d2_p",
+      "direction": "output",
+      "board_net": "PIN75_RGB_R3/HDMI_D2_P",
+      "package_pin": "75",
+      "fpga_pin_name": "IOT38A",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_d2_p\" 75;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 75",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_d_p[2]"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D",
+      "gowin_pair_cst": "IO_LOC \"tmds_d_p[2]\" 75,74;",
+      "example_pair_mapping": "positive_port_declares_positive_and_negative_package_pins"
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_d2_n",
+      "direction": "output",
+      "board_net": "PIN74_RGB_R4/HDMI_D2_N",
+      "package_pin": "74",
+      "fpga_pin_name": "IOT38B",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"hdmi_d2_n\" 74;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 74",
+        "TangNano-9K-example:hdmi/src/hdmi.cst",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "tmds_d_n[2]"
+      ],
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS33D"
+    },
+    {
+      "interface_id": "spi_flash",
+      "signal_name": "flash_sck",
+      "direction": "output",
+      "board_net": "PIN59_IOR12B_MCLK",
+      "package_pin": "59",
+      "fpga_pin_name": "IOR12B/MCLK/D4",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"flash_sck\" 59;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "docs_manifest.json:schematic_manual",
+        "pins.json:QN88P pin 59",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "flash_clk"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "spi_flash",
+      "signal_name": "flash_cs",
+      "direction": "output",
+      "board_net": "PIN60_IOR12A_MCS",
+      "package_pin": "60",
+      "fpga_pin_name": "IOR12A/MCS_N/D5",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"flash_cs\" 60;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "docs_manifest.json:schematic_manual",
+        "pins.json:QN88P pin 60",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "flash_csb"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "spi_flash",
+      "signal_name": "flash_mosi",
+      "direction": "output",
+      "board_net": "PIN61_IOR11B_MOSI",
+      "package_pin": "61",
+      "fpga_pin_name": "IOR11B/MO/D6",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"flash_mosi\" 61;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "docs_manifest.json:schematic_manual",
+        "pins.json:QN88P pin 61",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "flash_mosi"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "spi_flash",
+      "signal_name": "flash_miso",
+      "direction": "input",
+      "board_net": "PIN62_IOR11A_MISO",
+      "package_pin": "62",
+      "fpga_pin_name": "IOR11A/MI/D7",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"flash_miso\" 62;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "docs_manifest.json:schematic_manual",
+        "pins.json:QN88P pin 62",
+        "TangNano-9K-example:picotiny/project/picotiny.cst"
+      ],
+      "example_aliases": [
+        "flash_miso"
+      ],
+      "example_repository_verified": true
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_clk",
+      "direction": "output",
+      "board_net": "PIN36_IOB29B_TF_SCLK",
+      "package_pin": "36",
+      "fpga_pin_name": "IOB29B/GCLKC_4",
+      "bank": "2",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"sd_clk\" 36;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 36"
+      ]
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_cmd",
+      "direction": "output",
+      "board_net": "PIN37_IOB31A_TF_MOSI",
+      "package_pin": "37",
+      "fpga_pin_name": "IOB31A",
+      "bank": "2",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"sd_cmd\" 37;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 37"
+      ]
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat0",
+      "direction": "input",
+      "board_net": "PIN39_IOB33A_TF_MISO",
+      "package_pin": "39",
+      "fpga_pin_name": "IOB33A",
+      "bank": "2",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"sd_dat0\" 39;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 39"
+      ]
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat3_cs",
+      "direction": "output",
+      "board_net": "PIN38_IOB31B_TF_CS",
+      "package_pin": "38",
+      "fpga_pin_name": "IOB31B",
+      "bank": "2",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"sd_dat3_cs\" 38;",
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 38"
+      ]
+    },
+    {
+      "interface_id": "spi_lcd",
+      "signal_name": "lcd_data",
+      "direction": "output",
+      "board_net": "PIN77_IOT37A_SPILCD_MO",
+      "package_pin": "77",
+      "fpga_pin_name": "IOT37A",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"lcd_data\" 77;",
+      "example_repository_verified": true,
+      "example_aliases": [
+        "lcd_data"
+      ],
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 77",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ]
+    },
+    {
+      "interface_id": "spi_lcd",
+      "signal_name": "lcd_rs",
+      "direction": "output",
+      "board_net": "PIN49_IOR24A_SPILCD_RS",
+      "package_pin": "49",
+      "fpga_pin_name": "IOR24A",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"lcd_rs\" 49;",
+      "example_repository_verified": true,
+      "example_aliases": [
+        "lcd_rs"
+      ],
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 49",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ]
+    },
+    {
+      "interface_id": "spi_lcd",
+      "signal_name": "lcd_cs",
+      "direction": "output",
+      "board_net": "PIN48_IOR24B_SPILCD_CS",
+      "package_pin": "48",
+      "fpga_pin_name": "IOR24B",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"lcd_cs\" 48;",
+      "example_repository_verified": true,
+      "example_aliases": [
+        "lcd_cs"
+      ],
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 48",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ]
+    },
+    {
+      "interface_id": "spi_lcd",
+      "signal_name": "lcd_clk",
+      "direction": "output",
+      "board_net": "PIN76_IOT37B_SPILCD_MCLK",
+      "package_pin": "76",
+      "fpga_pin_name": "IOT37B",
+      "bank": "1",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"lcd_clk\" 76;",
+      "example_repository_verified": true,
+      "example_aliases": [
+        "lcd_clk"
+      ],
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 76",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ]
+    },
+    {
+      "interface_id": "spi_lcd",
+      "signal_name": "lcd_resetn",
+      "direction": "output",
+      "board_net": "PIN47_IOB43B_SPILCD_EN",
+      "package_pin": "47",
+      "fpga_pin_name": "IOB43B",
+      "bank": "2",
+      "mapping_status": "verified",
+      "pinout_cross_check": "verified_qn88p",
+      "gowin_cst": "IO_LOC \"lcd_resetn\" 47;",
+      "example_repository_verified": true,
+      "example_aliases": [
+        "lcd_resetn"
+      ],
+      "sources": [
+        "docs_manifest.json:board_schematic",
+        "pins.json:QN88P pin 47",
+        "TangNano-9K-example:spi_lcd/src/lcd114_test.cst"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_sda",
+      "mapping_status": "unverified",
+      "reason": "HDMI SDA connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "sources_checked": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "TangNano-9K-example inspected folders"
+      ]
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_scl",
+      "mapping_status": "unverified",
+      "reason": "HDMI SCL connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "sources_checked": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "TangNano-9K-example inspected folders"
+      ]
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_hpd",
+      "mapping_status": "unverified",
+      "reason": "HDMI HPD connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "sources_checked": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "TangNano-9K-example inspected folders"
+      ]
+    },
+    {
+      "interface_id": "hdmi",
+      "signal_name": "hdmi_cec",
+      "mapping_status": "unverified",
+      "reason": "HDMI CEC/HCEC connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "sources_checked": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "TangNano-9K-example inspected folders"
+      ]
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat1",
+      "mapping_status": "unverified",
+      "reason": "TF card DAT1 connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "sources_checked": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "TangNano-9K-example inspected folders"
+      ]
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_dat2",
+      "mapping_status": "unverified",
+      "reason": "TF card DAT2 connector-side label appears in local schematic text, but no verified FPGA/package-pin mapping is available.",
+      "sources_checked": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "TangNano-9K-example inspected folders"
+      ]
+    },
+    {
+      "interface_id": "sd_card",
+      "signal_name": "sd_card_detect",
+      "mapping_status": "unverified",
+      "reason": "No verified FPGA/package-pin mapping for SD card detect is available in the local sources checked.",
+      "sources_checked": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "TangNano-9K-example inspected folders"
+      ]
+    }
+  ],
+  "coverage_report": {
+    "interfaces_declared_in_interfaces_json": 8,
+    "interfaces_with_verified_pin_mappings": [
+      "clock",
+      "leds",
+      "buttons",
+      "uart",
+      "hdmi",
+      "spi_flash",
+      "sd_card",
+      "spi_lcd"
+    ],
+    "verified_constraint_count": 32,
+    "verified_with_caution_count": 1,
+    "unverified_item_count": 7,
+    "newly_verified_by_example_repository": [
+      "spi_lcd.lcd_data",
+      "spi_lcd.lcd_rs",
+      "spi_lcd.lcd_cs",
+      "spi_lcd.lcd_clk",
+      "spi_lcd.lcd_resetn",
+      "spi_flash.flash_part_and_capacity_metadata"
+    ],
+    "coverage_by_interface": {
+      "clock": {
+        "verified": 1,
+        "unverified": 0,
+        "coverage": "complete_example_verified"
+      },
+      "leds": {
+        "verified": 6,
+        "unverified": 0,
+        "coverage": "complete_pin_and_polarity_verified"
+      },
+      "buttons": {
+        "verified": 2,
+        "unverified": 0,
+        "coverage": "complete_pin_and_polarity_verified_with_s2_caution"
+      },
+      "uart": {
+        "verified": 2,
+        "unverified": 0,
+        "coverage": "complete_example_verified"
+      },
+      "hdmi": {
+        "verified": 8,
+        "unverified": 4,
+        "coverage": "tmds_complete_auxiliary_unverified"
+      },
+      "spi_flash": {
+        "verified": 4,
+        "unverified": 0,
+        "coverage": "signal_pins_and_flash_metadata_verified"
+      },
+      "sd_card": {
+        "verified": 4,
+        "unverified": 3,
+        "coverage": "spi_mode_complete_4bit_and_card_detect_unverified_not_in_examples"
+      },
+      "spi_lcd": {
+        "verified": 5,
+        "unverified": 0,
+        "coverage": "complete_example_verified"
+      }
+    },
+    "package_pin_cross_check": {
+      "checked_against": "pins.json QN88P package_pins",
+      "all_verified_constraints_present_in_pinout": true,
+      "board_profile_package_mismatch": false
+    },
+    "local_example_repository_status": "cloned_to_.tmp/TangNano-9K-example_and_inspected",
+    "newly_verified_by_project_docs": [
+      "spi_flash.flash_part",
+      "spi_flash.flash_capacity"
+    ],
+    "additional_web_research": "not_used_for_flash_metadata_update"
+  },
+  "example_repository_validation": {
+    "id": "tangnano_9k_example_repo",
+    "title": "Sipeed TangNano-9K-example repository",
+    "url": "https://github.com/sipeed/TangNano-9K-example",
+    "local_path": ".tmp/TangNano-9K-example",
+    "inspected_paths": [
+      "hdmi/",
+      "picotiny/",
+      "uart/",
+      "led/",
+      "spi_lcd/"
+    ],
+    "usage_policy": "verification_and_gap_resolution_only",
+    "verified_usage": [
+      {
+        "path": "hdmi/src/hdmi.cst",
+        "signals": [
+          "tmds_d_p[0]",
+          "tmds_d_p[1]",
+          "tmds_d_p[2]",
+          "tmds_clk_p",
+          "resetn",
+          "clk"
+        ]
+      },
+      {
+        "path": "picotiny/project/picotiny.cst",
+        "signals": [
+          "tmds_d_p[0]",
+          "tmds_d_p[1]",
+          "tmds_d_p[2]",
+          "tmds_clk_p",
+          "ser_tx",
+          "ser_rx",
+          "flash_csb",
+          "flash_clk",
+          "flash_miso",
+          "flash_mosi",
+          "gpio[0..6]",
+          "resetn",
+          "clk"
+        ]
+      },
+      {
+        "path": "uart/src/top.cst",
+        "signals": [
+          "uart_tx",
+          "uart_rx",
+          "rst_n",
+          "clk"
+        ]
+      },
+      {
+        "path": "led/src/9K_LED_project.cst",
+        "signals": [
+          "led[0..5]",
+          "sys_rst_n",
+          "sys_clk"
+        ]
+      },
+      {
+        "path": "spi_lcd/src/lcd114_test.cst",
+        "signals": [
+          "lcd_data",
+          "lcd_rs",
+          "lcd_cs",
+          "lcd_clk",
+          "lcd_resetn",
+          "ser_tx",
+          "ser_rx",
+          "resetn",
+          "clk"
+        ]
+      }
+    ],
+    "gap_resolution_result": {
+      "hdmi_ddc": "not_present_in_inspected_examples",
+      "hdmi_hpd": "not_present_in_inspected_examples",
+      "sd_card_detect": "not_present_in_inspected_examples",
+      "sd_4bit_mappings": "not_present_in_inspected_examples",
+      "flash_metadata": "partially_resolved_from_picotiny_simulation_and_readme"
+    }
+  },
+  "resolved_metadata": {
+    "spi_flash": {
+      "mapping_status": "verified_by_project_docs",
+      "flash_part": "PUYA P25Q32U",
+      "flash_capacity": "32 Mbit",
+      "capacity_bits": 32000000,
+      "capacity_bytes": 4000000,
+      "supported_mode": "DSPI",
+      "sources": [
+        "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+        "accepted flash metadata update"
+      ]
+    }
+  },
+  "board_package_version": "1.0"
+}

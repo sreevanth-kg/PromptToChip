@@ -3,7 +3,7 @@
   "board_id": "tang_nano_9k",
   "source_policy": {
     "fpga_package_pin_metadata": "pins.json generated from UG803-1.6E_GW1NR-9 Pinout.xlsx",
-    "board_level_interface_mapping": "pending Phase 3 extraction from board schematic and verified CST sources",
+    "board_level_interface_mapping": "verified against constraints.json and TangNano-9K-example repository where available",
     "constraints_location": "constraints.json"
   },
   "interfaces": [
@@ -11,157 +11,387 @@
       "id": "clock",
       "name": "Default system clock",
       "category": "clock",
-      "status": "known_capability_mapping_pending",
+      "status": "verified_in_constraints",
       "frequency_hz": 27000000,
       "frequency_label": "27 MHz",
       "signals": [
         {
           "name": "clk",
           "direction": "input",
-          "mapping_status": "pending_schematic_verification"
+          "mapping_status": "verified",
+          "package_pin": "52",
+          "example_aliases": [
+            "sys_clk"
+          ]
         }
       ],
       "primary_sources": [
         "board_profile.json",
-        "docs_manifest.json:board_schematic"
+        "docs_manifest.json:board_schematic",
+        "constraints.json",
+        "TangNano-9K-example"
       ]
     },
     {
       "id": "leds",
       "name": "User LEDs",
       "category": "gpio",
-      "status": "known_capability_mapping_pending",
-      "signals": [],
+      "status": "verified_in_constraints",
+      "signals": [
+        {
+          "name": "led[0]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "10",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "gpio[0]"
+          ]
+        },
+        {
+          "name": "led[1]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "11",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "gpio[1]"
+          ]
+        },
+        {
+          "name": "led[2]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "13",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "gpio[2]"
+          ]
+        },
+        {
+          "name": "led[3]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "14",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "gpio[3]"
+          ]
+        },
+        {
+          "name": "led[4]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "15",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "gpio[4]"
+          ]
+        },
+        {
+          "name": "led[5]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "16",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "gpio[5]"
+          ]
+        }
+      ],
       "primary_sources": [
         "docs_manifest.json:board_schematic",
-        "verified CST source in Phase 3"
+        "constraints.json",
+        "TangNano-9K-example:led",
+        "accepted master CST"
       ],
-      "unresolved": [
-        "LED count",
-        "LED net names",
-        "LED FPGA pins",
-        "active polarity"
-      ]
+      "unresolved": []
     },
     {
       "id": "buttons",
-      "name": "User buttons",
+      "name": "User buttons / reset inputs",
       "category": "gpio",
-      "status": "known_capability_mapping_pending",
-      "signals": [],
+      "status": "verified_in_constraints",
+      "signals": [
+        {
+          "name": "button_s1",
+          "direction": "input",
+          "mapping_status": "verified",
+          "package_pin": "3",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "rst_n",
+            "gpio[6]"
+          ]
+        },
+        {
+          "name": "button_s2",
+          "direction": "input",
+          "mapping_status": "verified_with_caution",
+          "package_pin": "4",
+          "active_polarity": "active_low",
+          "example_aliases": [
+            "resetn",
+            "sys_rst_n"
+          ]
+        }
+      ],
       "primary_sources": [
         "docs_manifest.json:board_schematic",
-        "verified CST source in Phase 3"
+        "constraints.json",
+        "TangNano-9K-example",
+        "accepted master CST"
       ],
-      "unresolved": [
-        "button count",
-        "button net names",
-        "button FPGA pins",
-        "active polarity"
-      ]
+      "unresolved": []
     },
     {
       "id": "uart",
       "name": "UART",
       "category": "serial",
-      "status": "known_capability_mapping_pending",
+      "status": "verified_in_constraints",
       "signals": [
         {
           "name": "uart_tx",
           "direction": "output",
-          "mapping_status": "pending_schematic_verification"
+          "mapping_status": "verified",
+          "package_pin": "17",
+          "example_aliases": [
+            "ser_tx"
+          ]
         },
         {
           "name": "uart_rx",
           "direction": "input",
-          "mapping_status": "pending_schematic_verification"
+          "mapping_status": "verified",
+          "package_pin": "18",
+          "example_aliases": [
+            "ser_rx"
+          ]
         }
       ],
       "primary_sources": [
         "docs_manifest.json:board_schematic",
-        "verified CST source in Phase 3"
+        "constraints.json",
+        "TangNano-9K-example:uart",
+        "TangNano-9K-example:picotiny"
       ],
-      "unresolved": [
-        "UART FPGA pins",
-        "USB serial bridge relationship",
-        "default baud rate"
-      ]
+      "unresolved": [],
+      "default_baud_rate": 115200
     },
     {
       "id": "hdmi",
-      "name": "HDMI",
+      "name": "HDMI TMDS",
       "category": "video",
-      "status": "known_capability_mapping_pending",
-      "signals": [],
+      "status": "verified_in_constraints",
+      "signals": [
+        {
+          "name": "tmds_clk_p",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pins": [
+            "69",
+            "68"
+          ],
+          "constraint_signal": "hdmi_clk_p"
+        },
+        {
+          "name": "tmds_d_p[0]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pins": [
+            "71",
+            "70"
+          ],
+          "constraint_signal": "hdmi_d0_p"
+        },
+        {
+          "name": "tmds_d_p[1]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pins": [
+            "73",
+            "72"
+          ],
+          "constraint_signal": "hdmi_d1_p"
+        },
+        {
+          "name": "tmds_d_p[2]",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pins": [
+            "75",
+            "74"
+          ],
+          "constraint_signal": "hdmi_d2_p"
+        }
+      ],
       "primary_sources": [
         "docs_manifest.json:board_schematic",
-        "verified CST source in Phase 3"
+        "constraints.json",
+        "TangNano-9K-example:hdmi",
+        "TangNano-9K-example:picotiny"
       ],
       "unresolved": [
-        "TMDS/data pin groups",
-        "clock pair",
-        "DDC/I2C pins if present",
-        "hot-plug detect if present"
+        "HDMI SDA",
+        "HDMI SCL",
+        "HDMI HPD",
+        "HDMI CEC"
       ]
     },
     {
       "id": "spi_flash",
       "name": "SPI flash",
       "category": "storage",
-      "status": "known_capability_mapping_pending",
+      "status": "verified_in_constraints",
       "signals": [
         {
           "name": "flash_cs",
           "direction": "output",
-          "mapping_status": "pending_schematic_verification"
+          "mapping_status": "verified",
+          "package_pin": "60",
+          "example_aliases": [
+            "flash_csb"
+          ]
         },
         {
           "name": "flash_sck",
           "direction": "output",
-          "mapping_status": "pending_schematic_verification"
+          "mapping_status": "verified",
+          "package_pin": "59",
+          "example_aliases": [
+            "flash_clk"
+          ]
         },
         {
           "name": "flash_mosi",
-          "direction": "output",
-          "mapping_status": "pending_schematic_verification"
+          "direction": "inout",
+          "mapping_status": "verified",
+          "package_pin": "61"
         },
         {
           "name": "flash_miso",
-          "direction": "input",
-          "mapping_status": "pending_schematic_verification"
+          "direction": "inout",
+          "mapping_status": "verified",
+          "package_pin": "62"
         }
       ],
       "primary_sources": [
         "docs_manifest.json:board_schematic",
         "docs_manifest.json:schematic_manual",
-        "verified CST source in Phase 3"
+        "constraints.json",
+        "TangNano-9K-example:picotiny",
+        "Project_docs schematic"
       ],
-      "unresolved": [
-        "flash part number",
-        "flash capacity",
-        "SPI pin mapping"
-      ]
+      "unresolved": [],
+      "metadata": {
+        "flash_part": "PUYA P25Q32U",
+        "flash_capacity": "32 Mbit",
+        "supported_mode": "DSPI",
+        "sources": [
+          "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
+          "accepted flash metadata update"
+        ]
+      }
     },
     {
       "id": "sd_card",
-      "name": "SD card",
+      "name": "SD card / TF card SPI mode",
       "category": "storage",
-      "status": "known_capability_mapping_pending",
-      "signals": [],
+      "status": "verified_in_constraints",
+      "signals": [
+        {
+          "name": "sd_clk",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "36"
+        },
+        {
+          "name": "sd_cmd",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "37",
+          "spi_alias": "sd_mosi"
+        },
+        {
+          "name": "sd_dat0",
+          "direction": "input",
+          "mapping_status": "verified",
+          "package_pin": "39",
+          "spi_alias": "sd_miso"
+        },
+        {
+          "name": "sd_dat3_cs",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "38",
+          "spi_alias": "sd_cs"
+        }
+      ],
       "primary_sources": [
         "docs_manifest.json:board_schematic",
-        "verified CST source in Phase 3"
+        "constraints.json"
       ],
       "unresolved": [
-        "SD mode",
-        "CLK/CMD/DAT pin mappings",
-        "card detect pin if present"
+        "SD DAT1",
+        "SD DAT2",
+        "SD card detect"
       ]
+    },
+    {
+      "id": "spi_lcd",
+      "name": "1.14 inch SPI LCD header",
+      "category": "display",
+      "primary_sources": [
+        "docs_manifest.json:board_schematic",
+        "constraints.json",
+        "TangNano-9K-example:spi_lcd"
+      ],
+      "status": "verified_in_constraints",
+      "signals": [
+        {
+          "name": "lcd_data",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "77"
+        },
+        {
+          "name": "lcd_rs",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "49"
+        },
+        {
+          "name": "lcd_cs",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "48"
+        },
+        {
+          "name": "lcd_clk",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "76"
+        },
+        {
+          "name": "lcd_resetn",
+          "direction": "output",
+          "mapping_status": "verified",
+          "package_pin": "47"
+        }
+      ],
+      "unresolved": []
     }
   ],
   "phase_2_notes": [
     "This file declares board-level interface groups without assigning FPGA pins.",
     "All final board net-to-FPGA pin mappings belong in constraints.json during Phase 3.",
     "Unresolved fields require schematic and verified CST cross-check before runtime use."
-  ]
+  ],
+  "phase_3_notes": [
+    "TangNano-9K-example used as secondary validation and gap-resolution source.",
+    "HDMI DDC/HPD and SD 4-bit/card-detect remain unresolved because they are not present in inspected examples.",
+    "SPI LCD interface added from spi_lcd example and schematic labels.",
+    "Flash metadata accepted from local Project_docs schematic: PUYA P25Q32U, 32 Mbit."
+  ],
+  "board_package_version": "1.0"
 }

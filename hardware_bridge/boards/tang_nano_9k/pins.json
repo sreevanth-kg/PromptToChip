@@ -9,7 +9,7 @@
       "True LVDS"
     ]
   },
-  "active_package": "QN88",
+  "active_package": "QN88P",
   "package_columns": {
     "QN88[1]": "QN88",
     "QN88P[2]": "QN88P",
@@ -64,7 +64,7 @@
         "MG100PT": "J3",
         "MG100PS": "J3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "27",
       "raw": {
         "Pin Name": "IOB11A",
@@ -115,7 +115,7 @@
         "MG100PT": "H3",
         "MG100PS": "H3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "28",
       "raw": {
         "Pin Name": "IOB11B",
@@ -166,7 +166,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB12A",
@@ -217,7 +217,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB12B",
@@ -268,7 +268,7 @@
         "MG100PT": "E4",
         "MG100PS": "E4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "29",
       "raw": {
         "Pin Name": "IOB13A",
@@ -319,7 +319,7 @@
         "MG100PT": "F4",
         "MG100PS": "F4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "30",
       "raw": {
         "Pin Name": "IOB13B",
@@ -370,7 +370,7 @@
         "MG100PT": "K3",
         "MG100PS": "K3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "31",
       "raw": {
         "Pin Name": "IOB15A",
@@ -421,7 +421,7 @@
         "MG100PT": "K4",
         "MG100PS": "K4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "32",
       "raw": {
         "Pin Name": "IOB15B",
@@ -472,7 +472,7 @@
         "MG100PT": "J4",
         "MG100PS": "J4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB17A",
@@ -523,7 +523,7 @@
         "MG100PT": "H4",
         "MG100PS": "H4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB17B",
@@ -574,7 +574,7 @@
         "MG100PT": "K5",
         "MG100PS": "K5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB21A",
@@ -625,7 +625,7 @@
         "MG100PT": "K6",
         "MG100PS": "K6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB21B",
@@ -676,7 +676,7 @@
         "MG100PT": "H5",
         "MG100PS": "H5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "33",
       "raw": {
         "Pin Name": "IOB23A",
@@ -727,7 +727,7 @@
         "MG100PT": "G5",
         "MG100PS": "G5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "34",
       "raw": {
         "Pin Name": "IOB23B",
@@ -780,7 +780,7 @@
         "MG100PT": "F5",
         "MG100PS": "F5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB28A/GCLKT_5",
@@ -833,7 +833,7 @@
         "MG100PT": "E5",
         "MG100PS": "E5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB28B/GCLKC_5",
@@ -886,7 +886,7 @@
         "MG100PT": "J6",
         "MG100PS": "J6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "35",
       "raw": {
         "Pin Name": "IOB29A/GCLKT_4",
@@ -939,7 +939,7 @@
         "MG100PT": "H6",
         "MG100PS": "H6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "36",
       "raw": {
         "Pin Name": "IOB29B/GCLKC_4",
@@ -990,7 +990,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "17",
       "raw": {
         "Pin Name": "IOB2A",
@@ -1041,7 +1041,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "18",
       "raw": {
         "Pin Name": "IOB2B",
@@ -1092,7 +1092,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB30A",
@@ -1143,7 +1143,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB30B",
@@ -1194,7 +1194,7 @@
         "MG100PT": "K7",
         "MG100PS": "K7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "37",
       "raw": {
         "Pin Name": "IOB31A",
@@ -1245,7 +1245,7 @@
         "MG100PT": "K8",
         "MG100PS": "K8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "38",
       "raw": {
         "Pin Name": "IOB31B",
@@ -1296,7 +1296,7 @@
         "MG100PT": "J7",
         "MG100PS": "J7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "39",
       "raw": {
         "Pin Name": "IOB33A",
@@ -1347,7 +1347,7 @@
         "MG100PT": "H7",
         "MG100PS": "H7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "40",
       "raw": {
         "Pin Name": "IOB33B",
@@ -1398,7 +1398,7 @@
         "MG100PT": "F6",
         "MG100PS": "F6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB35A",
@@ -1449,7 +1449,7 @@
         "MG100PT": "G6",
         "MG100PS": "G6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB35B",
@@ -1500,7 +1500,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB37A",
@@ -1551,7 +1551,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB37B",
@@ -1602,7 +1602,7 @@
         "MG100PT": "F7",
         "MG100PS": "F7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB39A",
@@ -1653,7 +1653,7 @@
         "MG100PT": "G7",
         "MG100PS": "G7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB39B",
@@ -1704,7 +1704,7 @@
         "MG100PT": "H1",
         "MG100PS": "H1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB3B",
@@ -1755,7 +1755,7 @@
         "MG100PT": "K10",
         "MG100PS": "K10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "41",
       "raw": {
         "Pin Name": "IOB41A",
@@ -1806,7 +1806,7 @@
         "MG100PT": "K9",
         "MG100PS": "K9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "42",
       "raw": {
         "Pin Name": "IOB41B",
@@ -1857,7 +1857,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB42B",
@@ -1908,7 +1908,7 @@
         "MG100PT": "J10",
         "MG100PS": "J10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB43A",
@@ -1959,7 +1959,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "47",
       "raw": {
         "Pin Name": "IOB43B",
@@ -2010,7 +2010,7 @@
         "MG100PT": "K1",
         "MG100PS": "K1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "19",
       "raw": {
         "Pin Name": "IOB4A",
@@ -2061,7 +2061,7 @@
         "MG100PT": "K2",
         "MG100PS": "K2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "20",
       "raw": {
         "Pin Name": "IOB4B",
@@ -2112,7 +2112,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB6A",
@@ -2163,7 +2163,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB6B",
@@ -2214,7 +2214,7 @@
         "MG100PT": "G4",
         "MG100PS": "G4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "25",
       "raw": {
         "Pin Name": "IOB8A",
@@ -2265,7 +2265,7 @@
         "MG100PT": "G3",
         "MG100PS": "G3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "26",
       "raw": {
         "Pin Name": "IOB8B",
@@ -2316,7 +2316,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB9A",
@@ -2367,7 +2367,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOB9B",
@@ -2420,7 +2420,7 @@
         "MG100PT": "E2",
         "MG100PS": "E2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "5",
       "raw": {
         "Pin Name": "IOL11A/TMS",
@@ -2473,7 +2473,7 @@
         "MG100PT": "E3",
         "MG100PS": "E3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "6",
       "raw": {
         "Pin Name": "IOL11B/TCK",
@@ -2526,7 +2526,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL12A/SCLK",
@@ -2579,7 +2579,7 @@
         "MG100PT": "F3",
         "MG100PS": "F3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "7",
       "raw": {
         "Pin Name": "IOL12B/TDI",
@@ -2632,7 +2632,7 @@
         "MG100PT": "F2",
         "MG100PS": "F2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "8",
       "raw": {
         "Pin Name": "IOL13A/TDO",
@@ -2685,7 +2685,7 @@
         "MG100PT": "D3",
         "MG100PS": "D3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "9",
       "raw": {
         "Pin Name": "IOL13B/RECONFIG_N",
@@ -2738,8 +2738,8 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
-      "active_package_pin": "10",
+      "active_package": "QN88P",
+      "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL14A/DONE",
         "Function": "I/O",
@@ -2791,7 +2791,7 @@
         "MG100PT": "D1",
         "MG100PS": "D1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL14B/READY",
@@ -2844,8 +2844,8 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
-      "active_package_pin": "11",
+      "active_package": "QN88P",
+      "active_package_pin": "10",
       "raw": {
         "Pin Name": "IOL15A/GCLKT_6",
         "Function": "I/O",
@@ -2897,7 +2897,7 @@
         "MG100PT": "F1",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL15B/GCLKC_6",
@@ -2948,8 +2948,8 @@
         "MG100PT": "D2",
         "MG100PS": ""
       },
-      "active_package": "QN88",
-      "active_package_pin": "",
+      "active_package": "QN88P",
+      "active_package_pin": "11",
       "raw": {
         "Pin Name": "IOL16B",
         "Function": "I/O",
@@ -2999,7 +2999,7 @@
         "MG100PT": "",
         "MG100PS": "F1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL18A",
@@ -3050,7 +3050,7 @@
         "MG100PT": "",
         "MG100PS": "D2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL18B",
@@ -3101,8 +3101,8 @@
         "MG100PT": "G2",
         "MG100PS": "G2"
       },
-      "active_package": "QN88",
-      "active_package_pin": "",
+      "active_package": "QN88P",
+      "active_package_pin": "13",
       "raw": {
         "Pin Name": "IOL21B",
         "Function": "I/O",
@@ -3152,8 +3152,8 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
-      "active_package_pin": "13",
+      "active_package": "QN88P",
+      "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL22A",
         "Function": "I/O",
@@ -3203,7 +3203,7 @@
         "MG100PT": "G1",
         "MG100PS": "G1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "14",
       "raw": {
         "Pin Name": "IOL22B",
@@ -3254,7 +3254,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL24B",
@@ -3305,8 +3305,8 @@
         "MG100PT": "H2",
         "MG100PS": "H2"
       },
-      "active_package": "QN88",
-      "active_package_pin": "",
+      "active_package": "QN88P",
+      "active_package_pin": "15",
       "raw": {
         "Pin Name": "IOL25B",
         "Function": "I/O",
@@ -3356,8 +3356,8 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
-      "active_package_pin": "15",
+      "active_package": "QN88P",
+      "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL26A",
         "Function": "I/O",
@@ -3407,7 +3407,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "16",
       "raw": {
         "Pin Name": "IOL26B",
@@ -3458,8 +3458,8 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
-      "active_package_pin": "3",
+      "active_package": "QN88P",
+      "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL2A",
         "Function": "I/O",
@@ -3509,7 +3509,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL3B",
@@ -3560,7 +3560,7 @@
         "MG100PT": "B2",
         "MG100PS": "B2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL4B",
@@ -3614,7 +3614,7 @@
         "MG100PT": "B1",
         "MG100PS": "B1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "4",
       "raw": {
         "Pin Name": "IOL5A/JTAGSEL_N/LPLL_T_in",
@@ -3667,7 +3667,7 @@
         "MG100PT": "B3",
         "MG100PS": "B3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL5B/LPLL_C_in",
@@ -3718,7 +3718,7 @@
         "MG100PT": "C1",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL7B",
@@ -3769,7 +3769,7 @@
         "MG100PT": "C2",
         "MG100PS": "C1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL8B",
@@ -3822,7 +3822,7 @@
         "MG100PT": "",
         "MG100PS": "C2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL9A/GCLKT_7",
@@ -3875,7 +3875,7 @@
         "MG100PT": "C3",
         "MG100PS": "C3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOL9B/GCLKC_7",
@@ -3929,7 +3929,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "62",
       "raw": {
         "Pin Name": "IOR11A/MI/D7",
@@ -3983,7 +3983,7 @@
         "MG100PT": "F9",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "61",
       "raw": {
         "Pin Name": "IOR11B/MO/D6",
@@ -4037,7 +4037,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "60",
       "raw": {
         "Pin Name": "IOR12A/MCS_N/D5",
@@ -4091,7 +4091,7 @@
         "MG100PT": "E10",
         "MG100PS": "E10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "59",
       "raw": {
         "Pin Name": "IOR12B/MCLK/D4",
@@ -4145,7 +4145,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "57",
       "raw": {
         "Pin Name": "IOR13A/FASTRD_N/D3",
@@ -4199,7 +4199,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR13B/SI/D2",
@@ -4253,7 +4253,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "56",
       "raw": {
         "Pin Name": "IOR14A/SO/D1",
@@ -4307,7 +4307,7 @@
         "MG100PT": "G9",
         "MG100PS": "G9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "55",
       "raw": {
         "Pin Name": "IOR14B/SSPI_CS_N/D0",
@@ -4361,7 +4361,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "54",
       "raw": {
         "Pin Name": "IOR15A/DIN/CLKHOLD_N",
@@ -4415,7 +4415,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "53",
       "raw": {
         "Pin Name": "IOR15B/DOUT/WE_N",
@@ -4466,7 +4466,7 @@
         "MG100PT": "F10",
         "MG100PS": "F10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR16B",
@@ -4519,7 +4519,7 @@
         "MG100PT": "F8",
         "MG100PS": "F8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "52",
       "raw": {
         "Pin Name": "IOR17A/GCLKT_3",
@@ -4572,7 +4572,7 @@
         "MG100PT": "G8",
         "MG100PS": "G8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "51",
       "raw": {
         "Pin Name": "IOR17B/GCLKC_3",
@@ -4623,7 +4623,7 @@
         "MG100PT": "H8",
         "MG100PS": "H8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR18B",
@@ -4674,7 +4674,7 @@
         "MG100PT": "G10",
         "MG100PS": "G10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR21B",
@@ -4725,7 +4725,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "50",
       "raw": {
         "Pin Name": "IOR22B",
@@ -4776,7 +4776,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR23B",
@@ -4827,7 +4827,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "49",
       "raw": {
         "Pin Name": "IOR24A",
@@ -4878,7 +4878,7 @@
         "MG100PT": "H9",
         "MG100PS": "H9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "48",
       "raw": {
         "Pin Name": "IOR24B",
@@ -4929,7 +4929,7 @@
         "MG100PT": "H10",
         "MG100PS": "H10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR25B",
@@ -4980,7 +4980,7 @@
         "MG100PT": "C10",
         "MG100PS": "C10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR2B",
@@ -5031,7 +5031,7 @@
         "MG100PT": "B10",
         "MG100PS": "B10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR3B",
@@ -5084,7 +5084,7 @@
         "MG100PT": "C9",
         "MG100PS": "C9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "63",
       "raw": {
         "Pin Name": "IOR5A/RPLL_T_in",
@@ -5137,7 +5137,7 @@
         "MG100PT": "D9",
         "MG100PS": "D9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR5B/RPLL_C_in",
@@ -5190,7 +5190,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR6A/RPLL_T_fb",
@@ -5243,7 +5243,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR6B/RPLL_C_fb",
@@ -5294,7 +5294,7 @@
         "MG100PT": "D10",
         "MG100PS": "D10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR7B",
@@ -5345,7 +5345,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR8B",
@@ -5398,7 +5398,7 @@
         "MG100PT": "E8",
         "MG100PS": "E8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR9A/GCLKT_2",
@@ -5451,7 +5451,7 @@
         "MG100PT": "",
         "MG100PS": "F9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOR9B/GCLKC_2",
@@ -5502,7 +5502,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "84",
       "raw": {
         "Pin Name": "IOT10A",
@@ -5553,7 +5553,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "83",
       "raw": {
         "Pin Name": "IOT10B",
@@ -5604,7 +5604,7 @@
         "MG100PT": "C4",
         "MG100PS": "C4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "82",
       "raw": {
         "Pin Name": "IOT11A",
@@ -5655,7 +5655,7 @@
         "MG100PT": "B4",
         "MG100PS": "B4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "81",
       "raw": {
         "Pin Name": "IOT11B",
@@ -5706,7 +5706,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "80",
       "raw": {
         "Pin Name": "IOT12A",
@@ -5757,7 +5757,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "79",
       "raw": {
         "Pin Name": "IOT12B",
@@ -5808,7 +5808,7 @@
         "MG100PT": "D5",
         "MG100PS": "D5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT13A",
@@ -5859,7 +5859,7 @@
         "MG100PT": "D6",
         "MG100PS": "D6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT13B",
@@ -5910,7 +5910,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT15A",
@@ -5961,7 +5961,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT15B",
@@ -6012,7 +6012,7 @@
         "MG100PT": "C5",
         "MG100PS": "C5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT17A",
@@ -6063,7 +6063,7 @@
         "MG100PT": "B5",
         "MG100PS": "B5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT17B",
@@ -6114,7 +6114,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT20A",
@@ -6165,7 +6165,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT20B",
@@ -6216,7 +6216,7 @@
         "MG100PT": "C6",
         "MG100PS": "C6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT21A",
@@ -6267,7 +6267,7 @@
         "MG100PT": "B6",
         "MG100PS": "B6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT21B",
@@ -6318,7 +6318,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT22A",
@@ -6369,7 +6369,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT22B",
@@ -6420,7 +6420,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT24A",
@@ -6471,7 +6471,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT24B",
@@ -6522,7 +6522,7 @@
         "MG100PT": "A6",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT27A",
@@ -6573,7 +6573,7 @@
         "MG100PT": "A7",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT27B",
@@ -6626,7 +6626,7 @@
         "MG100PT": "",
         "MG100PS": "A6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT28A/GCLKT_0",
@@ -6679,7 +6679,7 @@
         "MG100PT": "",
         "MG100PS": "A7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT28B/GCLKC_0",
@@ -6732,7 +6732,7 @@
         "MG100PT": "E6",
         "MG100PS": "E6"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT29A/GCLKT_1",
@@ -6785,7 +6785,7 @@
         "MG100PT": "E7",
         "MG100PS": "E7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT29B/GCLKC_1",
@@ -6836,8 +6836,8 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
-      "active_package_pin": "",
+      "active_package": "QN88P",
+      "active_package_pin": "3",
       "raw": {
         "Pin Name": "IOT2A",
         "Function": "I/O",
@@ -6887,7 +6887,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT2B",
@@ -6938,7 +6938,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT32A",
@@ -6989,7 +6989,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT32B",
@@ -7040,7 +7040,7 @@
         "MG100PT": "C7",
         "MG100PS": "C7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT33A",
@@ -7091,7 +7091,7 @@
         "MG100PT": "B7",
         "MG100PS": "B7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT33B",
@@ -7142,7 +7142,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT34A",
@@ -7193,7 +7193,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT34B",
@@ -7244,7 +7244,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "77",
       "raw": {
         "Pin Name": "IOT37A",
@@ -7295,7 +7295,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "76",
       "raw": {
         "Pin Name": "IOT37B",
@@ -7346,7 +7346,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "75",
       "raw": {
         "Pin Name": "IOT38A",
@@ -7397,7 +7397,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "74",
       "raw": {
         "Pin Name": "IOT38B",
@@ -7448,7 +7448,7 @@
         "MG100PT": "B8",
         "MG100PS": "B8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "73",
       "raw": {
         "Pin Name": "IOT39A",
@@ -7499,7 +7499,7 @@
         "MG100PT": "C8",
         "MG100PS": "C8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "72",
       "raw": {
         "Pin Name": "IOT39B",
@@ -7550,7 +7550,7 @@
         "MG100PT": "D7",
         "MG100PS": "D7"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "71",
       "raw": {
         "Pin Name": "IOT41A",
@@ -7601,7 +7601,7 @@
         "MG100PT": "D8",
         "MG100PS": "D8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "70",
       "raw": {
         "Pin Name": "IOT41B",
@@ -7652,7 +7652,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "69",
       "raw": {
         "Pin Name": "IOT42A",
@@ -7703,7 +7703,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "68",
       "raw": {
         "Pin Name": "IOT42B",
@@ -7754,7 +7754,7 @@
         "MG100PT": "B9",
         "MG100PS": "B9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT45A",
@@ -7805,7 +7805,7 @@
         "MG100PT": "A10",
         "MG100PS": "A10"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "IOT45B",
@@ -7858,7 +7858,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "88",
       "raw": {
         "Pin Name": "IOT5A/MODE0",
@@ -7911,7 +7911,7 @@
         "MG100PT": "D4",
         "MG100PS": "D4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "87",
       "raw": {
         "Pin Name": "IOT6B/MODE1",
@@ -7962,7 +7962,7 @@
         "MG100PT": "A3",
         "MG100PS": "A3"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "86",
       "raw": {
         "Pin Name": "IOT8A",
@@ -8013,7 +8013,7 @@
         "MG100PT": "A4",
         "MG100PS": "A4"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "85",
       "raw": {
         "Pin Name": "IOT8B",
@@ -8064,7 +8064,7 @@
         "MG100PT": "A2",
         "MG100PS": "A2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "1",
       "raw": {
         "Pin Name": "VCC",
@@ -8115,7 +8115,7 @@
         "MG100PT": "J2",
         "MG100PS": "J2"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "22",
       "raw": {
         "Pin Name": "VCC",
@@ -8166,7 +8166,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "45",
       "raw": {
         "Pin Name": "VCC",
@@ -8217,7 +8217,7 @@
         "MG100PT": "A8",
         "MG100PS": "A8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "66",
       "raw": {
         "Pin Name": "VCC",
@@ -8268,7 +8268,7 @@
         "MG100PT": "A5",
         "MG100PS": "A5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCO0",
@@ -8319,7 +8319,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCO0",
@@ -8370,7 +8370,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "58",
       "raw": {
         "Pin Name": "VCCO1",
@@ -8421,7 +8421,7 @@
         "MG100PT": "E9",
         "MG100PS": "E9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCO1",
@@ -8472,7 +8472,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCO1",
@@ -8523,7 +8523,7 @@
         "MG100PT": "J5",
         "MG100PS": "J5"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "23",
       "raw": {
         "Pin Name": "VCCO2",
@@ -8574,7 +8574,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "44",
       "raw": {
         "Pin Name": "VCCO2",
@@ -8625,7 +8625,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCO2",
@@ -8676,7 +8676,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "12",
       "raw": {
         "Pin Name": "VCCO3",
@@ -8727,7 +8727,7 @@
         "MG100PT": "E1",
         "MG100PS": "E1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCO3",
@@ -8778,7 +8778,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCO3",
@@ -8829,7 +8829,7 @@
         "MG100PT": "J8",
         "MG100PS": "J8"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCX",
@@ -8880,7 +8880,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCX",
@@ -8931,7 +8931,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VCCX",
@@ -8984,7 +8984,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "64",
       "raw": {
         "Pin Name": "VCCX/VCCO0",
@@ -9037,7 +9037,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "67",
       "raw": {
         "Pin Name": "VCCX/VCCO0",
@@ -9090,7 +9090,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "78",
       "raw": {
         "Pin Name": "VCCX/VCCO0",
@@ -9141,7 +9141,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "2",
       "raw": {
         "Pin Name": "VSS",
@@ -9192,7 +9192,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "21",
       "raw": {
         "Pin Name": "VSS",
@@ -9243,7 +9243,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "24",
       "raw": {
         "Pin Name": "VSS",
@@ -9294,7 +9294,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "43",
       "raw": {
         "Pin Name": "VSS",
@@ -9345,7 +9345,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "46",
       "raw": {
         "Pin Name": "VSS",
@@ -9396,7 +9396,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "65",
       "raw": {
         "Pin Name": "VSS",
@@ -9447,7 +9447,7 @@
         "MG100PT": "A1",
         "MG100PS": "A1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
@@ -9498,7 +9498,7 @@
         "MG100PT": "A9",
         "MG100PS": "A9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
@@ -9549,7 +9549,7 @@
         "MG100PT": "J1",
         "MG100PS": "J1"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
@@ -9600,7 +9600,7 @@
         "MG100PT": "J9",
         "MG100PS": "J9"
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
@@ -9651,7 +9651,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
@@ -9702,7 +9702,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
@@ -9753,7 +9753,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
@@ -9804,7 +9804,7 @@
         "MG100PT": "",
         "MG100PS": ""
       },
-      "active_package": "QN88",
+      "active_package": "QN88P",
       "active_package_pin": "",
       "raw": {
         "Pin Name": "VSS",
