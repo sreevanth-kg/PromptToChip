@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "board_id": "tang_nano_9k",
+  "source_policy": {
+    "fpga_package_pin_metadata": "pins.json generated from UG803-1.6E_GW1NR-9 Pinout.xlsx",
+    "board_level_interface_mapping": "pending Phase 3 extraction from board schematic and verified CST sources",
+    "constraints_location": "constraints.json"
+  },
+  "interfaces": [
+    {
+      "id": "clock",
+      "name": "Default system clock",
+      "category": "clock",
+      "status": "known_capability_mapping_pending",
+      "frequency_hz": 27000000,
+      "frequency_label": "27 MHz",
+      "signals": [
+        {
+          "name": "clk",
+          "direction": "input",
+          "mapping_status": "pending_schematic_verification"
+        }
+      ],
+      "primary_sources": [
+        "board_profile.json",
+        "docs_manifest.json:board_schematic"
+      ]
+    },
+    {
+      "id": "leds",
+      "name": "User LEDs",
+      "category": "gpio",
+      "status": "known_capability_mapping_pending",
+      "signals": [],
+      "primary_sources": [
+        "docs_manifest.json:board_schematic",
+        "verified CST source in Phase 3"
+      ],
+      "unresolved": [
+        "LED count",
+        "LED net names",
+        "LED FPGA pins",
+        "active polarity"
+      ]
+    },
+    {
+      "id": "buttons",
+      "name": "User buttons",
+      "category": "gpio",
+      "status": "known_capability_mapping_pending",
+      "signals": [],
+      "primary_sources": [
+        "docs_manifest.json:board_schematic",
+        "verified CST source in Phase 3"
+      ],
+      "unresolved": [
+        "button count",
+        "button net names",
+        "button FPGA pins",
+        "active polarity"
+      ]
+    },
+    {
+      "id": "uart",
+      "name": "UART",
+      "category": "serial",
+      "status": "known_capability_mapping_pending",
+      "signals": [
+        {
+          "name": "uart_tx",
+          "direction": "output",
+          "mapping_status": "pending_schematic_verification"
+        },
+        {
+          "name": "uart_rx",
+          "direction": "input",
+          "mapping_status": "pending_schematic_verification"
+        }
+      ],
+      "primary_sources": [
+        "docs_manifest.json:board_schematic",
+        "verified CST source in Phase 3"
+      ],
+      "unresolved": [
+        "UART FPGA pins",
+        "USB serial bridge relationship",
+        "default baud rate"
+      ]
+    },
+    {
+      "id": "hdmi",
+      "name": "HDMI",
+      "category": "video",
+      "status": "known_capability_mapping_pending",
+      "signals": [],
+      "primary_sources": [
+        "docs_manifest.json:board_schematic",
+        "verified CST source in Phase 3"
+      ],
+      "unresolved": [
+        "TMDS/data pin groups",
+        "clock pair",
+        "DDC/I2C pins if present",
+        "hot-plug detect if present"
+      ]
+    },
+    {
+      "id": "spi_flash",
+      "name": "SPI flash",
+      "category": "storage",
+      "status": "known_capability_mapping_pending",
+      "signals": [
+        {
+          "name": "flash_cs",
+          "direction": "output",
+          "mapping_status": "pending_schematic_verification"
+        },
+        {
+          "name": "flash_sck",
+          "direction": "output",
+          "mapping_status": "pending_schematic_verification"
+        },
+        {
+          "name": "flash_mosi",
+          "direction": "output",
+          "mapping_status": "pending_schematic_verification"
+        },
+        {
+          "name": "flash_miso",
+          "direction": "input",
+          "mapping_status": "pending_schematic_verification"
+        }
+      ],
+      "primary_sources": [
+        "docs_manifest.json:board_schematic",
+        "docs_manifest.json:schematic_manual",
+        "verified CST source in Phase 3"
+      ],
+      "unresolved": [
+        "flash part number",
+        "flash capacity",
+        "SPI pin mapping"
+      ]
+    },
+    {
+      "id": "sd_card",
+      "name": "SD card",
+      "category": "storage",
+      "status": "known_capability_mapping_pending",
+      "signals": [],
+      "primary_sources": [
+        "docs_manifest.json:board_schematic",
+        "verified CST source in Phase 3"
+      ],
+      "unresolved": [
+        "SD mode",
+        "CLK/CMD/DAT pin mappings",
+        "card detect pin if present"
+      ]
+    }
+  ],
+  "phase_2_notes": [
+    "This file declares board-level interface groups without assigning FPGA pins.",
+    "All final board net-to-FPGA pin mappings belong in constraints.json during Phase 3.",
+    "Unresolved fields require schematic and verified CST cross-check before runtime use."
+  ]
+}

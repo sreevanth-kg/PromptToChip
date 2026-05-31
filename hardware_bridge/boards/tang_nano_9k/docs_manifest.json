@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "board_id": "tang_nano_9k",
+  "source_root": "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K",
+  "primary_runtime_sources": {
+    "pinout_xlsx": "6_Chip_Manual\\EN\\UG803-1.6E_GW1NR-9 Pinout.xlsx",
+    "board_schematic": "2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf"
+  },
+  "documents": [
+    {
+      "id": "board_datasheet_en",
+      "title": "Sipeed Tang Nano 9K Datasheet EN",
+      "path": "1_Specification\\Sipeed_Tang_nano_9K_Datasheet_ENV1.0.pdf",
+      "type": "pdf",
+      "category": "board_specification",
+      "runtime_source": false
+    },
+    {
+      "id": "board_schematic",
+      "title": "Tang Nano 9K Board Schematic",
+      "path": "2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf",
+      "type": "pdf",
+      "category": "schematic",
+      "runtime_source": true
+    },
+    {
+      "id": "ibom",
+      "title": "Tang Nano 9K Interactive BOM",
+      "path": "3_Bit_number_map\\Tang_Nano_9K_3672_ibom.html",
+      "type": "html",
+      "category": "board_layout",
+      "runtime_source": false
+    },
+    {
+      "id": "top_designator",
+      "title": "Tang Nano 9K Top Designator Drawing",
+      "path": "3_Bit_number_map\\Tang_Nano_9K_3672_Top_Designator_Drawing.pdf",
+      "type": "pdf",
+      "category": "board_layout",
+      "runtime_source": false
+    },
+    {
+      "id": "bottom_designator",
+      "title": "Tang Nano 9K Bottom Designator Drawing",
+      "path": "3_Bit_number_map\\Tang_Nano_9K_3672_Bot_Designator_Drawing.pdf",
+      "type": "pdf",
+      "category": "board_layout",
+      "runtime_source": false
+    },
+    {
+      "id": "dimensions_pdf",
+      "title": "Tang Nano 9K Dimension Drawing",
+      "path": "4_Dimensional_drawing\\Tang_Nano_9K_3672_size.pdf",
+      "type": "pdf",
+      "category": "mechanical",
+      "runtime_source": false
+    },
+    {
+      "id": "chip_datasheet_en",
+      "title": "GW1NR Series FPGA Products Data Sheet",
+      "path": "6_Chip_Manual\\EN\\DS117-2.9.3E_GW1NR series of  FPGA Products DataSheet.pdf",
+      "type": "pdf",
+      "category": "fpga_datasheet",
+      "runtime_source": false
+    },
+    {
+      "id": "chip_pinout_pdf",
+      "title": "GW1NR-9 Pinout PDF",
+      "path": "6_Chip_Manual\\EN\\UG803-1.6E_GW1NR-9 Pinout.pdf",
+      "type": "pdf",
+      "category": "fpga_pinout",
+      "runtime_source": false
+    },
+    {
+      "id": "chip_pinout_xlsx",
+      "title": "GW1NR-9 Pinout XLSX",
+      "path": "6_Chip_Manual\\EN\\UG803-1.6E_GW1NR-9 Pinout.xlsx",
+      "type": "xlsx",
+      "category": "fpga_pinout",
+      "runtime_source": true
+    },
+    {
+      "id": "package_pinout_manual",
+      "title": "GW1NR Package and Pinout Manual",
+      "path": "6_Chip_Manual\\EN\\UG119-1.6E_GW1NR series of FPGA Products Package and Pinout.pdf",
+      "type": "pdf",
+      "category": "package_pinout",
+      "runtime_source": false
+    },
+    {
+      "id": "schematic_manual",
+      "title": "GW1NR Series Schematic Manual",
+      "path": "6_Chip_Manual\\EN\\UG284-1.8E_GW1NR Series of FPGA Products Schematic Manual.pdf",
+      "type": "pdf",
+      "category": "fpga_schematic_guidance",
+      "runtime_source": false
+    },
+    {
+      "id": "gowin_software_user_guide",
+      "title": "Gowin Software User Guide",
+      "path": "6_Chip_Manual\\EN\\General Guide\\SUG100-2.6E_Gowin Software User Guide.pdf",
+      "type": "pdf",
+      "category": "toolchain",
+      "runtime_source": false
+    },
+    {
+      "id": "gowin_quick_start",
+      "title": "Gowin Software Quick Start Guide",
+      "path": "6_Chip_Manual\\EN\\General Guide\\SUG918-1.3E_Gowin Software Quick Start Guide.pdf",
+      "type": "pdf",
+      "category": "toolchain",
+      "runtime_source": false
+    },
+    {
+      "id": "physical_constraints_guide",
+      "title": "Gowin Design Physical Constraints User Guide",
+      "path": "6_Chip_Manual\\EN\\General Guide\\SUG935-1.3E_Gowin Design Physical Constraints User Guide.pdf",
+      "type": "pdf",
+      "category": "constraints",
+      "runtime_source": false
+    },
+    {
+      "id": "timing_constraints_guide",
+      "title": "Gowin Design Timing Constraints User Guide",
+      "path": "6_Chip_Manual\\EN\\General Guide\\SUG940-1.3E_Gowin Design Timing Constraints User Guide.pdf",
+      "type": "pdf",
+      "category": "timing",
+      "runtime_source": false
+    },
+    {
+      "id": "gpio_guide",
+      "title": "Gowin Programmable IO GPIO User Guide",
+      "path": "6_Chip_Manual\\EN\\General Guide\\UG289-1.9.2E_Gowin Programmable IO _GPIO_ User Guide.pdf",
+      "type": "pdf",
+      "category": "gpio",
+      "runtime_source": false
+    },
+    {
+      "id": "clock_guide",
+      "title": "Gowin Clock User Guide",
+      "path": "6_Chip_Manual\\EN\\General Guide\\UG286-1.9.1E_Gowin Clock User Guide.pdf",
+      "type": "pdf",
+      "category": "clocking",
+      "runtime_source": false
+    },
+    {
+      "id": "picorv_hardware_reference",
+      "title": "Gowin PicoRV32 Hardware Design Reference Manual",
+      "path": "6_Chip_Manual\\EN\\PicoRV\\IPUG914-1.3E_Gowin PicoRV32 Hardware Design Reference Manual.pdf",
+      "type": "pdf",
+      "category": "picorv",
+      "runtime_source": false
+    },
+    {
+      "id": "picorv_reference_design",
+      "title": "Gowin PicoRV32 Reference Design Package",
+      "path": "6_Chip_Manual\\EN\\PicoRV\\Gowin_Picorv32_V1.2.1.zip",
+      "type": "zip",
+      "category": "examples",
+      "runtime_source": false
+    },
+    {
+      "id": "toolchain_readme",
+      "title": "Tang Nano 9K Toolchain Readme",
+      "path": "7_toolchain\\readme.txt",
+      "type": "txt",
+      "category": "toolchain",
+      "runtime_source": false
+    }
+  ],
+  "shared_documents": [
+    {
+      "id": "gowin_ide_readme",
+      "title": "Gowin Educational IDE Readme",
+      "path": "C:\\Documents\\Project_docs\\TANG\\TANG\\gowin_ide\\readme.txt",
+      "type": "txt",
+      "category": "toolchain"
+    },
+    {
+      "id": "programmer_readme",
+      "title": "Gowin Programmer Readme",
+      "path": "C:\\Documents\\Project_docs\\TANG\\TANG\\programmer\\readme.txt",
+      "type": "txt",
+      "category": "programmer"
+    }
+  ],
+  "notes": [
+    "Use the pinout XLSX and board schematic as primary sources for runtime pin and constraint extraction.",
+    "Use PDFs through retrieval/manifests for explanation, verification, and human-readable references.",
+    "Do not treat generated examples as source of truth for pin mappings unless verified against schematic and pinout data."
+  ]
+}

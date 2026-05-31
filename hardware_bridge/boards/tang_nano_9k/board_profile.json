@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "board_id": "tang_nano_9k",
+  "board_name": "Tang Nano 9K",
+  "vendor": "Sipeed",
+  "source_root": "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K",
+  "fpga": {
+    "vendor": "Gowin",
+    "family": "GW1NR",
+    "part": "GW1NR-9C",
+    "package": "QN88",
+    "logic_cells": 8640
+  },
+  "clock": {
+    "default_frequency_hz": 27000000,
+    "default_frequency_label": "27 MHz"
+  },
+  "detection": {
+    "usb": {
+      "vid": "0403",
+      "pid": "6010",
+      "serial_hint": "FACTORYAIOT_PRO"
+    },
+    "jtag": {
+      "expected_idcode": "0x0100481b"
+    }
+  },
+  "programming": {
+    "default_programmer": "openFPGALoader",
+    "openfpgaloader_board": "tangnano9k",
+    "methods": [
+      "sram",
+      "flash"
+    ]
+  },
+  "capabilities": {
+    "leds": true,
+    "buttons": true,
+    "uart": true,
+    "hdmi": true,
+    "spi_flash": true,
+    "sd_card": true,
+    "lcd": true,
+    "picorv": true
+  },
+  "knowledge_files": {
+    "docs_manifest": "docs_manifest.json",
+    "pins": "pins.json",
+    "interfaces": "interfaces.json",
+    "constraints": "constraints.json",
+    "examples_manifest": "examples_manifest.json"
+  },
+  "status": {
+    "profile": "created",
+    "pins": "pending",
+    "interfaces": "pending",
+    "constraints": "pending",
+    "examples": "pending"
+  }
+}
