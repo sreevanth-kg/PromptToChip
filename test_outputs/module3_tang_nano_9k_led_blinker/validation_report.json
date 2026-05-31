@@ -1,0 +1,52 @@
+{
+  "module": "module_3",
+  "test_name": "coder_agent_board_package_end_to_end",
+  "prompt": "Create a Tang Nano 9K LED blinker running at 1 Hz.",
+  "output_dir": "test_outputs\\module3_tang_nano_9k_led_blinker",
+  "main_agent_routes_request_to_coder_agent": true,
+  "board_package_loaded": {
+    "board_profile": "C:\\Users\\sreev\\Desktop\\project\\hardware_bridge\\boards\\tang_nano_9k\\board_profile.json",
+    "interfaces": "C:\\Users\\sreev\\Desktop\\project\\hardware_bridge\\boards\\tang_nano_9k\\interfaces.json",
+    "constraints": "C:\\Users\\sreev\\Desktop\\project\\hardware_bridge\\boards\\tang_nano_9k\\constraints.json"
+  },
+  "interfaces_used": [
+    {
+      "id": "clock",
+      "signal": "clk",
+      "package_pin": "52",
+      "frequency_hz": 27000000,
+      "source": "verified_in_constraints"
+    },
+    {
+      "id": "leds",
+      "signal": "led[0]",
+      "package_pin": "10",
+      "active_polarity": "active_low",
+      "source": "verified_in_constraints"
+    }
+  ],
+  "constraints_generated": [
+    {
+      "signal": "clk",
+      "package_pin": "52"
+    },
+    {
+      "signal": "led[0]",
+      "package_pin": "10"
+    }
+  ],
+  "files_generated": [
+    "test_outputs\\module3_tang_nano_9k_led_blinker\\led_blinker.v",
+    "test_outputs\\module3_tang_nano_9k_led_blinker\\led_blinker.cst",
+    "test_outputs\\module3_tang_nano_9k_led_blinker\\coder_response.md",
+    "test_outputs\\module3_tang_nano_9k_led_blinker\\coder_prompt.md"
+  ],
+  "success": true,
+  "failures": [],
+  "coder_response_chars": 1382,
+  "artifact_evidence": {
+    "clock_frequency_from_board_profile_hz": 27000000,
+    "clock_frequency_found_in_hdl": true,
+    "constraints_selected_from_verified_board_map": true
+  }
+}

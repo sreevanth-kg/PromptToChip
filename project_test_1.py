@@ -1,6 +1,7 @@
 import json
 import msvcrt
 import os
+import re
 import sys
 import threading
 from datetime import datetime
@@ -9,6 +10,15 @@ from colorama import Fore, Style, init
 from google import genai
 from google.genai import types
 from google.genai.errors import APIError
+
+from coder_agent import (
+    DEFAULT_CODER_MODEL,
+    ask_coder,
+    get_last_coder_prompt,
+    is_coder_request,
+    load_board_context,
+    strip_coder_command,
+)
 
 
 init(autoreset=True)
@@ -22,6 +32,7 @@ USER_COLOR = Fore.YELLOW + Style.BRIGHT
 
 MEMORY_FILE = Path(__file__).with_name("chat_memory.json")
 PROJECT_FILE = Path(__file__).with_name("project_metadata.json")
+GENERATED_ROOT = Path(__file__).with_name("generated_projects")
 CREATE_NEW_PROJECT = "+ Create new project"
 PROJECT_LOCK = threading.Lock()
 PROJECT_THREADS = []
@@ -29,6 +40,25 @@ PROJECT_THREADS = []
 
 def current_timestamp():
     return datetime.now().isoformat(timespec="seconds")
+
+
+def load_local_env():
+    env_path = Path(__file__).with_name(".env")
+    if not env_path.exists():
+        return
+
+    try:
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            stripped = line.strip()
+            if not stripped or stripped.startswith("#") or "=" not in stripped:
+                continue
+            key, value = stripped.split("=", 1)
+            key = key.strip()
+            value = value.strip().strip('"').strip("'")
+            if key and key not in os.environ:
+                os.environ[key] = value
+    except OSError as e:
+        print(f"{MUTED}[Env skipped]: {e}{Style.RESET_ALL}")
 
 
 def load_memory():
@@ -162,6 +192,261 @@ def project_metadata_schema():
             "status",
         ],
     }
+
+
+def planning_schema():
+    return {
+        "type": "object",
+        "properties": {
+            "response_type": {"type": "string"},
+            "expertise_level": {"type": "string"},
+            "needs_code_generation": {"type": "boolean"},
+            "clarifying_questions": {
+                "type": "array",
+                "items": {"type": "string"},
+            },
+            "assumptions": {
+                "type": "array",
+                "items": {"type": "string"},
+            },
+            "board": {"type": "string"},
+            "files_to_generate": {
+                "type": "array",
+                "items": {"type": "string"},
+            },
+            "implementation_plan": {
+                "type": "array",
+                "items": {"type": "string"},
+            },
+            "coder_request": {"type": "string"},
+            "mentor_response": {"type": "string"},
+        },
+        "required": [
+            "response_type",
+            "expertise_level",
+            "needs_code_generation",
+            "clarifying_questions",
+            "assumptions",
+            "board",
+            "files_to_generate",
+            "implementation_plan",
+            "coder_request",
+            "mentor_response",
+        ],
+    }
+
+
+def build_planning_prompt(project, user_input, recent_messages):
+    board_context = load_board_context()
+    recent_turns = []
+
+    for message in recent_messages[-8:]:
+        role = message.get("role")
+        text = message.get("text")
+        if role and text:
+            recent_turns.append({"role": role, "text": text[-1200:]})
+
+    return f"""
+You are Gemma, the main FPGA engineer and mentor for PromptToChip.
+You must receive every user message before any coder tool is used.
+
+Your job:
+- Infer the user's FPGA expertise level from the conversation: beginner, intermediate, advanced, or unknown.
+- Ask clarifying questions when code generation would be risky or underspecified.
+- Create an execution plan before any code generation.
+- Decide whether the local coder_agent should be used after approval.
+- Act as a mentor: explain enough for the user's level without overwhelming them.
+
+Hard rules:
+- Do not generate HDL/CST code yourself in this planning response.
+- If code generation is needed, response_type must be "plan".
+- If clarification is needed before planning, response_type must be "clarify" and needs_code_generation must be false.
+- If no code generation is needed, response_type must be "answer".
+- For Tang Nano 9K work, use only verified board resources from the board context.
+- Mention unresolved board resources only as unavailable/gated, never as usable pins.
+- If the user wrote /code, still create a plan and wait for approval.
+
+Current project metadata:
+{json.dumps(compact_metadata(project), indent=2)}
+
+Recent conversation:
+{json.dumps(recent_turns, indent=2)}
+
+Board context available to coder_agent:
+{json.dumps(board_context, indent=2)}
+
+User message:
+{user_input}
+
+Return one JSON object matching the schema.
+response_type must be one of: answer, clarify, plan.
+"""
+
+
+def request_execution_plan(client, model_name, project, user_input, recent_messages):
+    prompt = build_planning_prompt(project, user_input, recent_messages)
+    response = client.models.generate_content(
+        model=model_name,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=planning_schema(),
+        ),
+    )
+    if not response.text:
+        raise ValueError("planning response was empty")
+
+    return json.loads(response.text)
+
+
+def print_list(title, items):
+    print(f"{ACCENT}{title}:{Style.RESET_ALL}")
+    if not items:
+        print(f"{MUTED}- none{Style.RESET_ALL}")
+        return
+
+    for item in items:
+        print(f"- {item}")
+
+
+def format_plan_for_memory(plan):
+    lines = [
+        f"Expertise level: {plan.get('expertise_level', 'unknown')}",
+        f"Board: {plan.get('board') or 'not selected'}",
+        "Assumptions:",
+    ]
+    lines.extend(f"- {item}" for item in plan.get("assumptions", []))
+    lines.append("Files to generate:")
+    lines.extend(f"- {item}" for item in plan.get("files_to_generate", []))
+    lines.append("Implementation plan:")
+    lines.extend(f"- {item}" for item in plan.get("implementation_plan", []))
+    return "\n".join(lines)
+
+
+def show_execution_plan(plan):
+    print(f"{AI_COLOR}Gemma plan:{Style.RESET_ALL}")
+    if plan.get("mentor_response"):
+        print(plan["mentor_response"])
+        print()
+
+    print(f"{ACCENT}Expertise level:{Style.RESET_ALL} {plan.get('expertise_level', 'unknown')}")
+    print_list("Assumptions", plan.get("assumptions", []))
+    print(f"{ACCENT}Board:{Style.RESET_ALL} {plan.get('board') or 'not selected'}")
+    print_list("Files to be generated", plan.get("files_to_generate", []))
+    print_list("Implementation plan", plan.get("implementation_plan", []))
+    print()
+
+
+def ask_for_approval():
+    while True:
+        answer = input(f"{USER_COLOR}Proceed with code generation? (Y/N):{Style.RESET_ALL} ").strip().lower()
+        if answer in {"y", "yes"}:
+            return True
+        if answer in {"n", "no"}:
+            return False
+        print(f"{MUTED}Please answer Y or N.{Style.RESET_ALL}")
+
+
+def safe_name(value):
+    safe = re.sub(r"[^A-Za-z0-9_.-]+", "_", value.strip())
+    return safe.strip("._") or "project"
+
+
+def code_extension_to_filename(language, index):
+    normalized = language.lower()
+    extension = {
+        "verilog": "v",
+        "systemverilog": "sv",
+        "sv": "sv",
+        "cst": "cst",
+        "text": "txt",
+    }.get(normalized, "txt")
+    return f"artifact_{index}.{extension}"
+
+
+def extract_named_code_blocks(coder_response):
+    pattern = re.compile(
+        r"(?:^|\n)\s*(?:File|Filename|Path)\s*:\s*([^\n]+)\n\s*```([A-Za-z0-9_+.-]*)\n(.*?)```",
+        re.DOTALL | re.IGNORECASE,
+    )
+    blocks = []
+
+    for index, match in enumerate(pattern.finditer(coder_response), start=1):
+        filename = safe_name(match.group(1).strip().strip("`"))
+        language = match.group(2).strip() or "text"
+        code = match.group(3).strip() + "\n"
+        blocks.append({"filename": filename, "language": language, "code": code, "index": index})
+
+    if blocks:
+        return blocks
+
+    fallback = re.compile(r"```([A-Za-z0-9_+.-]*)\n(.*?)```", re.DOTALL)
+    for index, match in enumerate(fallback.finditer(coder_response), start=1):
+        language = match.group(1).strip() or "text"
+        blocks.append(
+            {
+                "filename": code_extension_to_filename(language, index),
+                "language": language,
+                "code": match.group(2).strip() + "\n",
+                "index": index,
+            }
+        )
+
+    return blocks
+
+
+def save_coder_artifacts(chat_name, coder_response):
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_dir = GENERATED_ROOT / safe_name(chat_name) / timestamp
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    response_path = output_dir / "coder_response.md"
+    response_path.write_text(coder_response + "\n", encoding="utf-8")
+    prompt_path = output_dir / "coder_prompt.md"
+    prompt_path.write_text(get_last_coder_prompt() + "\n", encoding="utf-8")
+
+    generated_files = [str(response_path), str(prompt_path)]
+    for block in extract_named_code_blocks(coder_response):
+        path = output_dir / block["filename"]
+        path.write_text(block["code"], encoding="utf-8")
+        generated_files.append(str(path))
+
+    return {
+        "output_dir": str(output_dir),
+        "generated_files": generated_files,
+    }
+
+
+def build_review_prompt(plan, coder_response, artifacts):
+    return f"""
+You are Gemma, reviewing the local RTL coder's completed work for the user.
+
+Explain:
+- what was generated
+- board resources used
+- constraints used
+- next available actions
+
+Be concise and mentor-like. If the coder output appears incomplete, say so plainly.
+Do not claim files exist unless they are listed in the artifact manifest.
+
+Approved plan:
+{json.dumps(plan, indent=2)}
+
+Artifact manifest:
+{json.dumps(artifacts, indent=2)}
+
+Coder output:
+{coder_response}
+"""
+
+
+def review_coder_completion(client, model_name, plan, coder_response, artifacts):
+    response = client.models.generate_content(
+        model=model_name,
+        contents=build_review_prompt(plan, coder_response, artifacts),
+    )
+    return (response.text or "").strip()
 
 
 def merge_ai_metadata(project, ai_metadata):
@@ -390,6 +675,7 @@ def build_history(saved_messages):
 
 
 def start_chat():
+    load_local_env()
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print(f"{ERROR}[Error]:{Style.RESET_ALL} GEMINI_API_KEY environment variable not found.", file=sys.stderr)
@@ -408,6 +694,8 @@ def start_chat():
         print(f"{ACCENT}{'=' * 56}")
         print(f"{SUCCESS} Chat session started with {Style.BRIGHT}{model_name}{SUCCESS}!")
         print(f"{MUTED} Type 'exit' or 'quit' to end the conversation.")
+        print(f"{MUTED} Gemma plans first; code generation runs only after Y approval.")
+        print(f"{MUTED} Use '/code <request>' to request a coder plan ({DEFAULT_CODER_MODEL}).")
         print(f"{ACCENT}{'=' * 56}\n")
 
         while True:
@@ -421,18 +709,50 @@ def start_chat():
                 if not user_input:
                     continue
 
-                sys.stdout.write(f"{AI_COLOR}AI:{Style.RESET_ALL} ")
-                sys.stdout.flush()
+                project = projects.get(chat_name, default_project_metadata(chat_name))
+                plan = request_execution_plan(
+                    client,
+                    model_name,
+                    project,
+                    user_input,
+                    memory.get(chat_name, []),
+                )
 
-                # Stream the content using the native chat architecture
-                response_stream = chat.send_message_stream(user_input)
-                ai_response = ""
-                
-                for chunk in response_stream:
-                    if text := chunk.text:
-                        ai_response += text
-                        sys.stdout.write(text)
-                        sys.stdout.flush()
+                if plan.get("response_type") == "clarify":
+                    ai_response = plan.get("mentor_response", "").strip()
+                    questions = plan.get("clarifying_questions", [])
+                    if questions:
+                        ai_response = (ai_response + "\n\n" if ai_response else "") + "Clarifying questions:\n"
+                        ai_response += "\n".join(f"- {question}" for question in questions)
+                    print(f"{AI_COLOR}Gemma:{Style.RESET_ALL} {ai_response}", end="")
+                elif plan.get("response_type") == "plan" or plan.get("needs_code_generation"):
+                    show_execution_plan(plan)
+                    plan_memory = format_plan_for_memory(plan)
+
+                    if not ask_for_approval():
+                        ai_response = plan_memory + "\n\nCode generation was not run because approval was declined."
+                        print(f"{MUTED}Code generation cancelled. We can revise the plan or keep discussing.\n{Style.RESET_ALL}", end="")
+                    else:
+                        coder_request = strip_coder_command(plan.get("coder_request") or user_input)
+                        print(f"{AI_COLOR}Coder:{Style.RESET_ALL} running approved implementation with {DEFAULT_CODER_MODEL}...")
+                        coder_response = ask_coder(
+                            coder_request,
+                            compact_metadata(project),
+                            memory.get(chat_name, []),
+                        )
+                        artifacts = save_coder_artifacts(chat_name, coder_response)
+                        review = review_coder_completion(client, model_name, plan, coder_response, artifacts)
+                        ai_response = (
+                            plan_memory
+                            + "\n\nCoder output:\n"
+                            + coder_response
+                            + "\n\nGemma review:\n"
+                            + review
+                        )
+                        print(f"{AI_COLOR}Gemma review:{Style.RESET_ALL} {review}", end="")
+                else:
+                    ai_response = plan.get("mentor_response", "").strip()
+                    print(f"{AI_COLOR}Gemma:{Style.RESET_ALL} {ai_response}", end="")
                 
                 save_chat_turn(memory, chat_name, user_input, ai_response)
                 update_project_metadata_in_background(

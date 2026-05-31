@@ -4,6 +4,7 @@
   "board_name": "Tang Nano 9K",
   "vendor": "Sipeed",
   "source_root": "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K",
+  "toolchain": "gowin",
   "fpga": {
     "vendor": "Gowin",
     "family": "GW1NR",
@@ -27,6 +28,7 @@
   },
   "programming": {
     "default_programmer": "openFPGALoader",
+    "toolchain": "gowin",
     "openfpgaloader_board": "tangnano9k",
     "methods": [
       "sram",
@@ -55,6 +57,8 @@
     "pins": "created",
     "interfaces": "created",
     "constraints": "created",
-    "examples": "pending"
-  }
+    "examples": "pending",
+    "hardware_validation": "led_bank3_lvcmos18_verified"
+  },
+  "board_package_version": "1.0.1"
 }

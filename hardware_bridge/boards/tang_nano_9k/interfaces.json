@@ -46,7 +46,17 @@
           "active_polarity": "active_low",
           "example_aliases": [
             "gpio[0]"
-          ]
+          ],
+          "bank": "3",
+          "vccio": 1.8,
+          "io_type": "LVCMOS18",
+          "electrical": {
+            "pin": 10,
+            "bank": 3,
+            "vccio": 1.8,
+            "io_type": "LVCMOS18",
+            "mapping_status": "hardware_validated"
+          }
         },
         {
           "name": "led[1]",
@@ -56,7 +66,17 @@
           "active_polarity": "active_low",
           "example_aliases": [
             "gpio[1]"
-          ]
+          ],
+          "bank": "3",
+          "vccio": 1.8,
+          "io_type": "LVCMOS18",
+          "electrical": {
+            "pin": 11,
+            "bank": 3,
+            "vccio": 1.8,
+            "io_type": "LVCMOS18",
+            "mapping_status": "hardware_validated"
+          }
         },
         {
           "name": "led[2]",
@@ -66,7 +86,17 @@
           "active_polarity": "active_low",
           "example_aliases": [
             "gpio[2]"
-          ]
+          ],
+          "bank": "3",
+          "vccio": 1.8,
+          "io_type": "LVCMOS18",
+          "electrical": {
+            "pin": 13,
+            "bank": 3,
+            "vccio": 1.8,
+            "io_type": "LVCMOS18",
+            "mapping_status": "hardware_validated"
+          }
         },
         {
           "name": "led[3]",
@@ -76,7 +106,17 @@
           "active_polarity": "active_low",
           "example_aliases": [
             "gpio[3]"
-          ]
+          ],
+          "bank": "3",
+          "vccio": 1.8,
+          "io_type": "LVCMOS18",
+          "electrical": {
+            "pin": 14,
+            "bank": 3,
+            "vccio": 1.8,
+            "io_type": "LVCMOS18",
+            "mapping_status": "hardware_validated"
+          }
         },
         {
           "name": "led[4]",
@@ -86,7 +126,17 @@
           "active_polarity": "active_low",
           "example_aliases": [
             "gpio[4]"
-          ]
+          ],
+          "bank": "3",
+          "vccio": 1.8,
+          "io_type": "LVCMOS18",
+          "electrical": {
+            "pin": 15,
+            "bank": 3,
+            "vccio": 1.8,
+            "io_type": "LVCMOS18",
+            "mapping_status": "hardware_validated"
+          }
         },
         {
           "name": "led[5]",
@@ -96,7 +146,17 @@
           "active_polarity": "active_low",
           "example_aliases": [
             "gpio[5]"
-          ]
+          ],
+          "bank": "3",
+          "vccio": 1.8,
+          "io_type": "LVCMOS18",
+          "electrical": {
+            "pin": 16,
+            "bank": 3,
+            "vccio": 1.8,
+            "io_type": "LVCMOS18",
+            "mapping_status": "hardware_validated"
+          }
         }
       ],
       "primary_sources": [
@@ -105,7 +165,11 @@
         "TangNano-9K-example:led",
         "accepted master CST"
       ],
-      "unresolved": []
+      "unresolved": [],
+      "bank": "3",
+      "vccio": 1.8,
+      "io_type": "LVCMOS18",
+      "hardware_validation": "verified_on_tang_nano_9k_led_blink"
     },
     {
       "id": "buttons",
@@ -391,7 +455,8 @@
     "TangNano-9K-example used as secondary validation and gap-resolution source.",
     "HDMI DDC/HPD and SD 4-bit/card-detect remain unresolved because they are not present in inspected examples.",
     "SPI LCD interface added from spi_lcd example and schematic labels.",
-    "Flash metadata accepted from local Project_docs schematic: PUYA P25Q32U, 32 Mbit."
+    "Flash metadata accepted from local Project_docs schematic: PUYA P25Q32U, 32 Mbit.",
+    "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
   ],
-  "board_package_version": "1.0"
+  "board_package_version": "1.0.1"
 }

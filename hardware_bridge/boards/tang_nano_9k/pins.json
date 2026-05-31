@@ -2863,7 +2863,15 @@
         "MG100PT[2]": "",
         "MG100PS[2]": ""
       },
-      "true_lvds_sheet_listed": false
+      "true_lvds_sheet_listed": false,
+      "board_electrical": {
+        "pin": 10,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      }
     },
     {
       "id": "pin_list_102",
@@ -2967,7 +2975,15 @@
         "MG100PT[2]": "D2",
         "MG100PS[2]": ""
       },
-      "true_lvds_sheet_listed": false
+      "true_lvds_sheet_listed": false,
+      "board_electrical": {
+        "pin": 11,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      }
     },
     {
       "id": "pin_list_107",
@@ -3120,7 +3136,15 @@
         "MG100PT[2]": "G2",
         "MG100PS[2]": "G2"
       },
-      "true_lvds_sheet_listed": false
+      "true_lvds_sheet_listed": false,
+      "board_electrical": {
+        "pin": 13,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      }
     },
     {
       "id": "pin_list_113",
@@ -3222,7 +3246,15 @@
         "MG100PT[2]": "G1",
         "MG100PS[2]": "G1"
       },
-      "true_lvds_sheet_listed": true
+      "true_lvds_sheet_listed": true,
+      "board_electrical": {
+        "pin": 14,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      }
     },
     {
       "id": "pin_list_118",
@@ -3324,7 +3356,15 @@
         "MG100PT[2]": "H2",
         "MG100PS[2]": "H2"
       },
-      "true_lvds_sheet_listed": false
+      "true_lvds_sheet_listed": false,
+      "board_electrical": {
+        "pin": 15,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      }
     },
     {
       "id": "pin_list_121",
@@ -3426,7 +3466,15 @@
         "MG100PT[2]": "",
         "MG100PS[2]": ""
       },
-      "true_lvds_sheet_listed": true
+      "true_lvds_sheet_listed": true,
+      "board_electrical": {
+        "pin": 16,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      }
     },
     {
       "id": "pin_list_125",
@@ -9825,5 +9873,23 @@
       },
       "true_lvds_sheet_listed": false
     }
-  ]
+  ],
+  "board_package_version": "1.0.1",
+  "board_voltage_overlays": {
+    "bank_3": {
+      "bank": 3,
+      "vccio": 1.8,
+      "io_type": "LVCMOS18",
+      "mapping_status": "hardware_validated",
+      "applies_to_active_package_pins": [
+        10,
+        11,
+        13,
+        14,
+        15,
+        16
+      ],
+      "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+    }
+  }
 }

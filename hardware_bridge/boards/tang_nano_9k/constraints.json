@@ -16,7 +16,8 @@
       "Board-level net names were extracted from the local Tang_Nano_9k_3672 schematic PDF.",
       "FPGA package metadata was cross-checked against pins.json generated from UG803-1.6E_GW1NR-9 Pinout.xlsx.",
       "The schematic and accepted master CST identify the FPGA package as GW1NR-9 QN88P.",
-      "Flash part metadata accepted from local Project_docs schematic evidence: PUYA P25Q32U, 32 Mbit."
+      "Flash part metadata accepted from local Project_docs schematic evidence: PUYA P25Q32U, 32 Mbit.",
+      "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
     ]
   },
   "fpga_package": {
@@ -75,12 +76,24 @@
         "docs_manifest.json:board_schematic",
         "pins.json:QN88P pin 10",
         "TangNano-9K-example:led/src/9K_LED_project.cst",
-        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias",
+        "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
       ],
       "example_aliases": [
         "gpio[0]"
       ],
-      "example_repository_verified": true
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS18",
+      "vccio": 1.8,
+      "electrical": {
+        "pin": 10,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      },
+      "gowin_io_port": "IO_PORT \"led[0]\" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;"
     },
     {
       "interface_id": "leds",
@@ -98,12 +111,24 @@
         "docs_manifest.json:board_schematic",
         "pins.json:QN88P pin 11",
         "TangNano-9K-example:led/src/9K_LED_project.cst",
-        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias",
+        "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
       ],
       "example_aliases": [
         "gpio[1]"
       ],
-      "example_repository_verified": true
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS18",
+      "vccio": 1.8,
+      "electrical": {
+        "pin": 11,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      },
+      "gowin_io_port": "IO_PORT \"led[1]\" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;"
     },
     {
       "interface_id": "leds",
@@ -121,12 +146,24 @@
         "docs_manifest.json:board_schematic",
         "pins.json:QN88P pin 13",
         "TangNano-9K-example:led/src/9K_LED_project.cst",
-        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias",
+        "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
       ],
       "example_aliases": [
         "gpio[2]"
       ],
-      "example_repository_verified": true
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS18",
+      "vccio": 1.8,
+      "electrical": {
+        "pin": 13,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      },
+      "gowin_io_port": "IO_PORT \"led[2]\" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;"
     },
     {
       "interface_id": "leds",
@@ -144,12 +181,24 @@
         "docs_manifest.json:board_schematic",
         "pins.json:QN88P pin 14",
         "TangNano-9K-example:led/src/9K_LED_project.cst",
-        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias",
+        "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
       ],
       "example_aliases": [
         "gpio[3]"
       ],
-      "example_repository_verified": true
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS18",
+      "vccio": 1.8,
+      "electrical": {
+        "pin": 14,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      },
+      "gowin_io_port": "IO_PORT \"led[3]\" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;"
     },
     {
       "interface_id": "leds",
@@ -167,12 +216,24 @@
         "docs_manifest.json:board_schematic",
         "pins.json:QN88P pin 15",
         "TangNano-9K-example:led/src/9K_LED_project.cst",
-        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias",
+        "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
       ],
       "example_aliases": [
         "gpio[4]"
       ],
-      "example_repository_verified": true
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS18",
+      "vccio": 1.8,
+      "electrical": {
+        "pin": 15,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      },
+      "gowin_io_port": "IO_PORT \"led[4]\" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;"
     },
     {
       "interface_id": "leds",
@@ -190,12 +251,24 @@
         "docs_manifest.json:board_schematic",
         "pins.json:QN88P pin 16",
         "TangNano-9K-example:led/src/9K_LED_project.cst",
-        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias"
+        "TangNano-9K-example:picotiny/project/picotiny.cst gpio alias",
+        "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
       ],
       "example_aliases": [
         "gpio[5]"
       ],
-      "example_repository_verified": true
+      "example_repository_verified": true,
+      "io_standard": "LVCMOS18",
+      "vccio": 1.8,
+      "electrical": {
+        "pin": 16,
+        "bank": 3,
+        "vccio": 1.8,
+        "io_type": "LVCMOS18",
+        "mapping_status": "hardware_validated",
+        "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+      },
+      "gowin_io_port": "IO_PORT \"led[5]\" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;"
     },
     {
       "interface_id": "buttons",
@@ -991,5 +1064,74 @@
       ]
     }
   },
-  "board_package_version": "1.0"
+  "board_package_version": "1.0.1",
+  "bank_voltage_map": {
+    "3": {
+      "bank": 3,
+      "vccio": 1.8,
+      "io_type": "LVCMOS18",
+      "mapping_status": "hardware_validated",
+      "applies_to_package_pins": [
+        10,
+        11,
+        13,
+        14,
+        15,
+        16
+      ],
+      "source": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+    }
+  },
+  "hardware_validation": {
+    "led_bank_io_standard": {
+      "status": "verified_on_hardware",
+      "pins": [
+        {
+          "pin": 10,
+          "signal": "led[0]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 11,
+          "signal": "led[1]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 13,
+          "signal": "led[2]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 14,
+          "signal": "led[3]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 15,
+          "signal": "led[4]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 16,
+          "signal": "led[5]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        }
+      ],
+      "failed_io_type": "LVCMOS33",
+      "passing_io_type": "LVCMOS18",
+      "evidence": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+    }
+  }
 }

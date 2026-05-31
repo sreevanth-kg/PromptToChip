@@ -269,7 +269,13 @@
   },
   "newly_verified_signals": [
     "spi_flash.flash_part",
-    "spi_flash.flash_capacity"
+    "spi_flash.flash_capacity",
+    "led[0].io_type_LVCMOS18",
+    "led[1].io_type_LVCMOS18",
+    "led[2].io_type_LVCMOS18",
+    "led[3].io_type_LVCMOS18",
+    "led[4].io_type_LVCMOS18",
+    "led[5].io_type_LVCMOS18"
   ],
   "remaining_unresolved_signals": [
     {
@@ -322,7 +328,7 @@
       "status": "unverified"
     }
   ],
-  "board_package_version": "1.0",
+  "board_package_version": "1.0.1",
   "flash_metadata": {
     "mapping_status": "verified_by_project_docs",
     "flash_part": "PUYA P25Q32U",
@@ -331,5 +337,55 @@
       "C:\\Documents\\Project_docs\\TANG\\TANG\\Nano 9K\\2_Schematic\\Tang_Nano_9k_3672_Schematic.pdf:U3",
       "accepted flash metadata update"
     ]
+  },
+  "hardware_validation": {
+    "led_bank_io_standard": {
+      "status": "pass",
+      "pins": [
+        {
+          "pin": 10,
+          "signal": "led[0]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 11,
+          "signal": "led[1]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 13,
+          "signal": "led[2]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 14,
+          "signal": "led[3]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 15,
+          "signal": "led[4]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        },
+        {
+          "pin": 16,
+          "signal": "led[5]",
+          "bank": 3,
+          "vccio": 1.8,
+          "io_type": "LVCMOS18"
+        }
+      ],
+      "evidence": "Hardware validation 2026-05-31: Gowin build reported Bank 3 Vccio(1.8) locked; LVCMOS18 manual LED CST built, programmed, and blinked successfully on Tang Nano 9K."
+    }
   }
 }
